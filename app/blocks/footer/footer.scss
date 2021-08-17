@@ -1,0 +1,9 @@
+.footer{
+    &__top{
+        display: grid;
+        grid-template-columns: 1fr 372px 1fr;
+        column-gap: 274px;
+        justify-content: center;
+        padding: 53px 0 32px;
+    }
+}
