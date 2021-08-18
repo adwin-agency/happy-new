@@ -11,6 +11,8 @@
         left: 0px;
         top: 0px;
         width: 100%;
+        
+        z-index: 1000;
     }
 
 
@@ -22,6 +24,7 @@
         align-items: center;
     }
     &__city-icon{
+        fill: #2E3831;
         height: 10px;
         width: 11px;
         margin-right: 16px;
