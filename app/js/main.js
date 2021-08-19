@@ -105,8 +105,28 @@ const scrollShowHide = (param) => {
 
 }
 
+const stickyMain = () => {
+    const sticky = document.querySelector('.main-cat__caption');
 
 
+    if (sticky) {
+        if (window.innerWidth > 768) {
+            const header = document.querySelector('.header');
+            sticky.style.top = header.offsetHeight + 'px';
+
+
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    sticky.style.top = header.offsetHeight + 'px';
+                }
+                else {
+                    sticky.style.top = '0px';
+                }
+            });
+        }
+    }
+}
 
 
 
@@ -116,4 +136,5 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownMobile();
     menuFix();
     scrollShowHide();
+    stickyMain();
 });
