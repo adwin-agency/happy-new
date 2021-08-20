@@ -128,8 +128,17 @@ const stickyMain = () => {
     }
 }
 
+/*sliders*/
 
-
+const catalogSlider = () => {
+    const swiperCatalog = new Swiper('.kitchen-small__slider_js', {
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+}
 document.addEventListener('DOMContentLoaded', () => {
     selectHandler();
     burgerHandler();
@@ -137,4 +146,5 @@ document.addEventListener('DOMContentLoaded', () => {
     menuFix();
     scrollShowHide();
     stickyMain();
+    catalogSlider();
 });
