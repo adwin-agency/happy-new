@@ -1,0 +1,25 @@
+<section class="popular">
+    <div class="container popular__container">
+        <h3 class="popular__header">Популярные кухни</h3>
+        <ul class="popular__list">
+            @@include("../kitchen/kitchen-small.html",{
+            img:'/img/kitchens/kit (1).jpg',
+            title:'Ферроль',
+            price:'48 700 ₽'
+            })
+            @@include("../kitchen/kitchen-small.html",{
+            img:'/img/kitchens/kit (2).jpg',
+            title:'Арриба',
+            price:'54 650 ₽'
+            })
+        </ul>
+        <div class="popular__btn-wrapper">
+            <a href="#" class="popular__btn btn btn_blue"><span>Все кухни</span>
+                <svg class="kitchen-small__arrow">
+                    <use xlink:href="/img/sprite/sprite.svg#arr-white"></use>
+                </svg></a>
+        </div>
+
+    </div>
+
+</section>

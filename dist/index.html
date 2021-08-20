@@ -7,14 +7,406 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
     <link rel="stylesheet" href="../css/main.css">
+    <script src="/js/main.js"></script>
+    <script src="/js/artem.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
 </head>
 
 <body>
 
-    <h1>asdasd</h1>
-    <h2 style="color:rgb(74, 85, 241)">aaaaa</h2>
-<h1>Footer</h1>
+    <section class="header fixed">
+        <div class="header__container container">
+            <div class="header__top">
+                <div class="header__burger-wrapper">
+                    <div class="header__burger">
+                        <span class="header__burger-line"></span>
+                        <span class="header__burger-line"></span>
+                        <span class="header__burger-line"></span>
+                    </div>
+                </div>
 
+                <div class="header__city">
+                    <div class="select__wrapper header__city-select">
+                        <select class="select__element" name="city" id="">
+                            <option value="Санкт-Петербург">Санкт-Петербург</option>
+                            <option value="Моска">Моска</option>
+                            <option value="Казань">Казань</option>
+                            <option value="Воронеж">Воронеж</option>
+                        </select>
+                        <div class="select__content ">
+                            <span class="select__current">
+                                <svg class="header__city-icon">
+                                    <use xlink:href="/img/sprite/sprite.svg#plane"></use>
+                                </svg>
+                                <span class="select__current-text header__city-text">Санкт-Петербург</span>
+                        </div>
+                        </span>
+                        <ul class="select__list header__select-list">
+                            <li class="select__item header__select-item">Санкт-Петербург</li>
+                            <li class="select__item header__select-item">Моска</li>
+                            <li class="select__item header__select-item">Казань</li>
+                            <li class="select__item header__select-item">Воронеж</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="/" class="header__main">
+                    <picture>
+                        <source srcset="/img/icons/logo_mobile.svg" media="(max-width: 1400px)">
+                        <img src="/img/icons/HK-logo.svg" alt="" class="header__logo">
+                    </picture>
+
+                </a>
+                <div class="header__right">
+                    <div class="header__info">
+                        <p class="header__work-time">с 9 до 22 без выходных</p>
+                        <a href="tel:+78126777585" class="header__phone">+7 (812) 677 75 85</a>
+                    </div>
+                    <button class="header__btn btn btn_yellow">
+                        Консультация дизайнера
+                    </button>
+                </div>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item header__nav-item_with-child">
+                        <div class="header__nav-link-container">
+                            <a href="#" class="header__nav-link">
+                                Кухни
+                            </a>
+                            <div class="header__dropdown-open-mobile">
+                                <span class="header__dropdown-open-mobile-line"></span>
+                                <span class="header__dropdown-open-mobile-line"></span>
+                            </div>
+                        </div>
+                        <div class="header__dropdown-container">
+                            <ul class="header__dropdown">
+                                <li class="header__dropdown-item header__dropdown-item_desk">
+                                    <a href="#" class="header__dropdown-link header__dropdown-link">
+                                        <img src="/img/icons/HK-logo_1-6.svg" alt="" class="header__dropdown-icon">
+                                        <span><b>Все кухни</b></span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <img src="/img/icons/HK-logo_1-2.svg" alt="" class="header__dropdown-icon">
+                                        <span>Прямые кухни</span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <img src="/img/icons/HK-logo_1-3.svg" alt="" class="header__dropdown-icon">
+                                        <span>Угловые кухни</span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <img src="/img/icons/HK-logo_1-4.svg" alt="" class="header__dropdown-icon">
+                                        <span>Маленькие кухни</span>
+                                    </a>
+                                </li>
+
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <img src="/img/icons/HK-logo_1-5.svg" alt="" class="header__dropdown-icon">
+                                        <span>Кухни с барной стойкой</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Шкафы</a>
+                    </li>
+                    <li class="header__nav-item header__nav-item_with-child">
+                        <div class="header__nav-link-container">
+                            <a href="#" class="header__nav-link">Техника</a>
+                            <div class="header__dropdown-open-mobile">
+                                <span class="header__dropdown-open-mobile-line"></span>
+                                <span class="header__dropdown-open-mobile-line"></span>
+                            </div>
+                        </div>
+                        <div class="header__dropdown-container">
+                            <ul class="header__dropdown header__dropdown_without-image">
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <span>Варочные панели</span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <span>Духовые шкафы</span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <span>Холодильники</span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <span>Посудомоечные машины</span>
+                                    </a>
+                                </li>
+
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <span>Вытяжки</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Мойки</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Материалы</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Процесс работы</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Отзывы</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <body>
+<main class="main">
+    <section class="main-cat">
+    <div class="container main-cat__container">
+        <div class="main-cat__wrapper">
+            <div class="main-cat__no-scroll-js">
+                <div class="main-cat__caption">
+                    <h1 class="main-cat__header">
+                        <span class="main-cat__yellow">Просто и быстро.</span><br>
+                        Новая кухня<br>
+                        по вашим размерам
+                    </h1>
+                    <p class="main-cat__discount">В этом месяце скидки<br> на все кухни
+                        <span class="main-cat__discount-value">-70%</span>
+                    </p>
+                </div>
+
+            </div>
+            <ul class="main-cat__list">
+                <li class="main-cat__item">
+    <a href="#">
+        <img src="/img/cat-img.jpg" alt="" class="main-cat__pic">
+
+        <div href="#" class="main-cat__info">
+            <p class="main-cat__title">Кухни</p>
+            <p class="main-cat__category">Угловые</p>
+            <p class="main-cat__price">от 100500 Р</p>
+        </div>
+    </a>
+</li>
+                <li class="main-cat__item">
+    <a href="#">
+        <img src="/img/cat-img2.jpg" alt="" class="main-cat__pic">
+
+        <div href="#" class="main-cat__info">
+            <p class="main-cat__title">Кухни</p>
+            <p class="main-cat__category">Прямые</p>
+            <p class="main-cat__price">от 100500 Р</p>
+        </div>
+    </a>
+</li>
+                <li class="main-cat__item">
+    <a href="#">
+        <img src="/img/cat-img3.jpg" alt="" class="main-cat__pic">
+
+        <div href="#" class="main-cat__info">
+            <p class="main-cat__title">Кухни</p>
+            <p class="main-cat__category">Маленькие</p>
+            <p class="main-cat__price">от 100500 Р</p>
+        </div>
+    </a>
+</li>
+                <li class="main-cat__item">
+    <a href="#">
+        <img src="/img/cat-img4.jpg" alt="" class="main-cat__pic">
+
+        <div href="#" class="main-cat__info">
+            <p class="main-cat__title">Кухни</p>
+            <p class="main-cat__category">С барной стойкой</p>
+            <p class="main-cat__price">от 100500 Р</p>
+        </div>
+    </a>
+</li>
+                <li class="main-cat__item">
+    <a href="#">
+        <img src="/img/cat-img5.jpg" alt="" class="main-cat__pic">
+
+        <div href="#" class="main-cat__info">
+            <p class="main-cat__title"></p>
+            <p class="main-cat__category">Шкафы</p>
+            <p class="main-cat__price">от 100500 Р</p>
+        </div>
+    </a>
+</li>
+                <li class="main-cat__item">
+    <a href="#">
+        <img src="/img/cat-img6.jpg" alt="" class="main-cat__pic">
+
+        <div href="#" class="main-cat__info">
+            <p class="main-cat__title"></p>
+            <p class="main-cat__category">Мойки</p>
+            <p class="main-cat__price">от 100500 Р</p>
+        </div>
+    </a>
+</li>
+            </ul>
+        </div>
+    </div>
+</section>
+    <section class="decision">
+    <div class="decision__content">
+        <h3 class="decision__header">Красивые и удобные решения. Даже в мелочах.</h3>
+        <div class="decision__caption">
+            <p class="decision__text">В центре наших проектов всегда стоите вы и ваши потребности. При желании вы можете
+                принять активное участие в создании проекта гарнитура или шкафа, а мы доведём работу до совершенства.
+            </p>
+            <p class="decision__text">Мебель производится на наших собственных фабриках, это позволяет создавать любой
+                дизайн для любого размера без переплат. </p>
+        </div>
+        <p class="decision__more">Хотите узнать, из чего делаются наши кухни?</p>
+        <a href="#" class="decision__btn btn btn_yellow">О материалах</a>
+    </div>
+</section>
+    <section class="call-forms">
+    <div class="container">
+        <h3 class="call-forms__title">
+            Узнайте стоимость вашей мебели с нашим бесплатным расчётом
+        </h3>
+        <ul class="call-forms__list">
+            <li class="call-forms__item">
+                <div class="call-forms__item-content">
+                    <div class="call-forms__pic">
+                        <svg class="call-forms__icon">
+                            <use xlink:href="/img/sprite/sprite.svg#success-one"></use>
+                        </svg>
+                    </div>
+
+                    <p class="call-forms__header">У меня есть<br> дизайн-проект</p>
+                    <p class="call-forms__text">Мы рассчитаем стоимость вашего проекта за несколько минут</p>
+                    <button class="call-forms__btn call-forms__btn_left btn btn_yellow">Узнать стоимость</button>
+                </div>
+            </li>
+            <li class="call-forms__item">
+                <div class="call-forms__item-content">
+                    <div class="call-forms__pic">
+                        <svg class="call-forms__icon">
+                            <use xlink:href="/img/sprite/sprite.svg#failed-one"></use>
+                        </svg>
+                    </div>
+
+                    <p class="call-forms__header">Нет дизайн-проекта</p>
+                    <p class="call-forms__text">Мы создадим уникальный проект дизайна по вашим размерам и рассчитаем
+                        стоимость
+                        всего за пару минут</p>
+                    <button class="call-forms__btn call-forms__btn_right btn btn_yellow">Нужны проект и
+                        стоимость</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+    <section class="popular">
+    <div class="container">
+        <h3 class="popular__header">Популярные кухни</h3>
+        <ul class="popular__list">
+            
+            
+        </ul>
+    </div>
+
+</section>
+</main>
+<section class="footer">
+    <div class="container footer__container">
+        <div class="footer__top">
+            <ul class="footer__menu">
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Кухни</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Шкафы</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Техника</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Мойки</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Материалы</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Процесс работы</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Отзывы</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Контакты</a>
+                </li>
+            </ul>
+            <div class="footer__info">
+                <a href="/" class="footer__logo-link">
+                    <img src="/img/icons/HK-logo.svg" alt="logo" class="footer__logo">
+                </a>
+                <p class="footer__phone-text">Один телефон для любых вопросов</p>
+                <a href="+78126777585" class="footer__phone-link">+7 (812) 677-75-85</a>
+                <a href="#" class="footer__pay-btn btn btn_white">Оплата онлайн</a>
+            </div>
+            <div class="footer__buttons">
+                <p class="footer__buttons-text">Вызов дизайнера и дизайн-проект бесплатно!</p>
+                <button class="footer__btn-designer btn btn_yellow" type="button">Консультация дизайнера</button>
+                <button class="footer__btn-callback btn btn_white" type="button">Обратный звонок</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="container footer__bottom-container">
+            <ul class="footer__social">
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link">
+                        <svg class="footer__social-icon">
+                            <use xlink:href="/img/sprite/sprite.svg#vk-fill"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link">
+                        <svg class="footer__social-icon">
+                            <use xlink:href="/img/sprite/sprite.svg#instagram-fill"></use>
+                        </svg>
+                    </a>
+                </li>
+
+            </ul>
+            <a href="#" class="footer__policy">Политика конфиденциальности</a>
+            <div class="footer__cards">
+                <svg class="footer__social-icon">
+                    <use xlink:href="/img/sprite/sprite.svg#mir-logo"></use>
+                </svg>
+                <svg class="footer__social-icon">
+                    <use xlink:href="/img/sprite/sprite.svg#mc-logo"></use>
+                </svg>
+                <svg class="footer__social-icon">
+                    <use xlink:href="/img/sprite/sprite.svg#visa-logo"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+</section>
 </body>
 
 </html>
