@@ -7,8 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
     <link rel="stylesheet" href="../css/main.css">
+<<<<<<< HEAD
     <script src="/js/main.js"></script>
     <script type="module" src="/js/artem.js"></script>
+=======
+    <link rel="stylesheet" href="../css/libs.min.css">
+    <script src="/js/artem.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/libs.min.js"></script>
+
+>>>>>>> main
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
 </head>
 
@@ -317,8 +325,138 @@
         </ul>
     </div>
 </section>
-    <section class="main-popular">
-    
+    <section class="popular">
+    <div class="container popular__container">
+        <h3 class="popular__header">Популярные кухни</h3>
+        <ul class="popular__list">
+            <li class="kitchen-small">
+    <div class="kitchen-small__slider-wrapper swiper-container kitchen-small__slider_js">
+        <ul class="kitchen-small__slider swiper-wrapper">
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="kitchen-small__discount">-70%</div>
+    </div>
+    <div class="kitchen-small__data">
+        <div class="kitchen-small__left">
+            <p class="kitchen-small__cat">кухня</p>
+            <a href="#" class="kitchen-small__title">Ферроль</a>
+            <p class="kitchen-small__price">48 700 ₽</p>
+        </div>
+        <div class="kitchen-small__right">
+            <button class="kitchen-small__btn"><span>Заказать расчёт</span>
+                <svg class="kitchen-small__arrow">
+                    <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</li>
+            <li class="kitchen-small">
+    <div class="kitchen-small__slider-wrapper swiper-container kitchen-small__slider_js">
+        <ul class="kitchen-small__slider swiper-wrapper">
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="kitchen-small__discount">-70%</div>
+    </div>
+    <div class="kitchen-small__data">
+        <div class="kitchen-small__left">
+            <p class="kitchen-small__cat">кухня</p>
+            <a href="#" class="kitchen-small__title">Арриба</a>
+            <p class="kitchen-small__price">54 650 ₽</p>
+        </div>
+        <div class="kitchen-small__right">
+            <button class="kitchen-small__btn"><span>Заказать расчёт</span>
+                <svg class="kitchen-small__arrow">
+                    <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</li>
+        </ul>
+        <div class="popular__btn-wrapper">
+            <a href="#" class="popular__btn btn btn_blue"><span>Все кухни</span>
+                <svg class="kitchen-small__arrow">
+                    <use xlink:href="/img/sprite/sprite.svg#arr-white"></use>
+                </svg></a>
+        </div>
+
+    </div>
+
+</section>
+    <section class="advantages">
+    <div class="advantages__container container">
+        <div class="advantages__items">
+            <div class="advantages__item">
+                <svg class="advantages__icon">
+                    <use xlink:href="/img/sprite/sprite.svg#delivery"></use>
+                </svg>
+                <div class="advantages__description">
+                    <h4 class="advantages__title">Доставка и монтаж</h4>
+                    <p class="advantages__text">Мы привезём и соберём мебель в удобное вам время</p>
+                </div>
+            </div>
+            <div class="advantages__item">
+                <svg class="advantages__icon">
+                    <use xlink:href="/img/sprite/sprite.svg#suitcase"></use>
+                </svg>
+                <div class="advantages__description">
+                    <h4 class="advantages__title">Безопасная оплата</h4>
+                    <p class="advantages__text">Наличными, по карте или <a class="advantages__link" href="">прямо с сайта</a></p>
+                </div>
+            </div>
+            <div class="advantages__item">
+                <svg class="advantages__icon">
+                    <use xlink:href="/img/sprite/sprite.svg#medal"></use>
+                </svg>
+                <div class="advantages__description">
+                    <h4 class="advantages__title">Гарантия 2 года</h4>
+                    <p class="advantages__text">Мы уверены, что наша мебель прослужит долго</p>
+                </div>
+            </div>
+            <div class="advantages__item">
+                <svg class="advantages__icon">
+                    <use xlink:href="/img/sprite/sprite.svg#leaf"></use>
+                </svg>
+                <div class="advantages__description">
+                    <h4 class="advantages__title">Экологичные материалы</h4>
+                    <p class="advantages__text">Класс эмиссии Е1 позволяет использовать их даже в мед. учереждениях</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 </main>
 <section class="footer">
