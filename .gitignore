@@ -4,3 +4,4 @@ package-lock.json
 /app/img/sprite/*
 /app/css/*
 /app/*.html
+/app/js/libs.min.js
