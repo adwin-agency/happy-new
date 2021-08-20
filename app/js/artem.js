@@ -1,6 +1,13 @@
+"use strict"
+  // import Swiper JS
+  import Swiper from 'swiper';
+  // import Swiper styles
+  import 'swiper/swiper-bundle.css';
+
 const initFunctions = ()=> {
     map();
     accordion();
+    swiperVideo();
 }
 const map = () => {
     ymaps.ready(init);
@@ -29,7 +36,21 @@ const accordion = () => {
             accItem.style.maxHeight ? accItem.style.maxHeight = null : accItem.style.maxHeight = accItem.scrollHeight + "px";
         } else return
     }
-} 
+}
+
+const swiperVideo = () => {
+    const swiper = new Swiper('.video-reviews__container', {
+        pagination: {
+            el: ".video-reviews__pagination",
+            type: "fraction",
+          },
+          navigation: {
+            nextEl: ".video-reviews__button-next",
+            prevEl: ".video-reviews__button-previous",
+          },
+    })
+}
+
 
 
 document.addEventListener("DOMContentLoaded", initFunctions);

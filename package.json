@@ -23,5 +23,8 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-uglifyjs": "^0.6.2",
     "imagemin-pngquant": "^9.0.2"
+  },
+  "dependencies": {
+    "swiper": "^6.8.3"
   }
 }
