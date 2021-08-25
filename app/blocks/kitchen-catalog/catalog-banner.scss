@@ -12,7 +12,7 @@
         column-gap: 80px;
     }
     &__wrapper{
-        background: linear-gradient(90deg, #FECF28 50%, white 50%);
+        background: linear-gradient(90deg, #FECF28 40%, white 40%);
     }
     &__info{
         display: flex;
@@ -82,7 +82,7 @@
         position: absolute;
         -webkit-text-stroke:3px rgba(255, 255, 255, 0.31);
         text-stroke: 3px rgba(255, 255, 255, 0.31);
-        color:#FECF28;
+        color: transparent;
         top: -79px;
         line-height: 473px;
         right: -87px;
@@ -127,6 +127,8 @@
         bottom: 70px;
         z-index: 3;
         position: absolute;
+        line-height: 26px;
+        
     }
     &__prize_blue{
         position: relative;
@@ -148,7 +150,7 @@
 @media(max-width:1440px){
     .catalog-top{
         &__container{
-            max-width: 1250px;
+            width: 1250px;
             grid-template-columns: 805px 1fr;
             column-gap: 60px;
         }
@@ -166,11 +168,166 @@
         &__discount{
         font-weight: 800;
         font-size: 230px;
-        margin-left: -62px;
+        margin-left: -62px;}
+        &__prize{
+            right: 95px;
+        }
+    }
 
+}
+@media(max-width:1280px){
+    .catalog-top{
+        &__container{
+            grid-template-columns: 542px 1fr;
+            column-gap: 30px;
+        }
     }
-    &__prize{
-        right: 95px;
+    .kitchen-banner{
+        padding-top: 51px;
+        padding-bottom: 122px;
+
+        &__text{
+            font-size: 55px;
+            line-height: 43px;
+        }
+        &__discount{
+        font-size: 163px;
+        margin-left: -26px;
+        }
+       
+        &__prize{
+            right: auto;
+            bottom: 33px;
+        }
     }
+
+
+}
+
+@media(max-width:960px){
+    .catalog-top{
+        padding-top: 0px;
+        &__container{
+            column-gap: 20px;
+        }
+        &__hedaer{
+            font-size:42px;
+            margin-bottom: 19px;
+        }
+    }
+    .kitchen-banner{
+    
+        &:after{
+            font-size: 498px;
+        }
+    }
+ 
+}
+@media(max-width:930px){
+    .catalog-top{
+        &__wrapper{
+            background-image: none;
+        }
+        &__container{
+            grid-template-columns: 1fr;
+            width: 523px;
+            max-width: 100%;
+        }
+        &__hedaer{
+            margin-bottom: 9px;
+        }
+        &__info{
+            padding-bottom: 50px;
+        }
+        &__description{
+            margin-bottom: 30px;
+        }
+    }
+    .kitchen-banner{
+        overflow: visible;
+        padding-top: 21px;
+        padding-bottom: 130px;
+        padding-right: 0px;
+        &:after{
+            content: "";
+            width: calc(100vw + 100px);
+            background-color: #FECF28;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            height: 100%;
+            transform: translate(-50%, 0);
+            z-index: -1;
+        }
+        &__wrapper{
+
+        }
+    }
+    .breadcrumbs{
+        display: none;
+    }
+ 
+}
+@media(max-width:768px){
+    .catalog-top{
+  
+        &__container{
+        }
+        &__info{
+            width: 100%;
+            max-width: 414px;
+            margin: 0 auto;
+        }
+      
+    }
+    .kitchen-banner{
+        width: 100%;
+        max-width: 414px;
+        padding-bottom: 114px;
+        margin: 0 auto;
+        &__text{
+            font-size: 50px;
+        }
+        &__discount{
+            font-size: 113px;
+            line-height: 96px;
+            margin-left: -47px;
+        }
+        &__row{
+            align-items: flex-end;
+        }
+        &__prize{
+            font-size: 24px;
+            line-height: 26px;
+        }
+        &__prize_blue:after{
+            width: 154px;
+            height: 36px;
+        }
+    }
+        
+}
+@media(max-width:414px){
+    .catalog-top{
+        &__num{
+            font-size: 39px;
+            line-height: 39px;
+        }
+        &__text{
+            font-size: 13px;
+        }
+        &__hedaer{
+            line-height: 40px;
+        }
+    }
+    .kitchen-banner{
+        &__text{
+            font-size: 39px;
+        }
+        &__discount{
+            font-size: 74px;
+            line-height: 53px;
+            margin-left: -30px;
+        }
     }
 }
