@@ -5,6 +5,12 @@ const selectHandler = () => {
             const selectWrapper = e.target.closest('.select__wrapper');
             const select = selectWrapper.querySelector('.select__element');
             const selectCurrent = selectWrapper.querySelector('.select__current-text');
+            sel.forEach(item => {
+                if (item != e.target.closest('.select__wrapper')) {
+                    item.classList.remove('active');
+                }
+
+            });
             selectWrapper.classList.toggle('active');
 
             if (e.target.closest('.select__item')) {
@@ -133,6 +139,14 @@ const stickyMain = () => {
 const catalogSlider = () => {
     const swiperCatalog = new Swiper('.kitchen-small__slider_js', {
         loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    const swiperCatalogBig = new Swiper('.kitchen-big__slider_js', {
+        loop: true,
+        slidesPerView: 1,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

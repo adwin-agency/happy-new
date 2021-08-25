@@ -47,7 +47,6 @@
         color:#0498CE;
         font-size: 14px;
         font-weight: 500;
-        margin-top: 20px;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -78,6 +77,24 @@
         color:#2E3831;
 
     }
+    &__cost{
+        display: flex;
+        align-items: center;
+    }
+    &__old-price{
+        color:#C4C4C4;
+        text-decoration-line: line-through;
+        font-weight: 600;
+        font-size: 16px;
+        margin-left: 25px;
+    }
+    &__left{
+        width: 100%;
+    }
+    &__line{
+        display: flex;
+        justify-content: space-between;
+    }
 }
 @media(max-width:1440px){
     .kitchen-small{
@@ -103,6 +120,9 @@
             line-height: 25px;
         }
     }
+}
+@media(max-width:850px){
+
 }
 @media(max-width:768px){
     .kitchen-small{
