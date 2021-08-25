@@ -7,16 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
     <link rel="stylesheet" href="../css/main.css">
-<<<<<<< HEAD
-    <script src="/js/main.js"></script>
-    <script type="module" src="/js/artem.js"></script>
-=======
     <link rel="stylesheet" href="../css/libs.min.css">
     <script src="/js/artem.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/libs.min.js"></script>
-
->>>>>>> main
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
 </head>
 
@@ -201,16 +195,16 @@
             </button>
             <h3 class="contacts-about__subtitle">Мы в сети</h3>
             <div class="contacts-about__icons">
-                <button class="contacts-about__icon-btn">
+                <a class="contacts-about__icon-btn" href="https://vk.com/happykitchenru" target="_blank" rel="noopener noreferrer">
                     <svg class="contacts-about__icon">
                         <use xlink:href="/img/sprite/sprite.svg#vk-fill2"></use>
                     </svg>
-                </button>
-                <button class="contacts-about__icon-btn">
+                </a>
+                <a class="contacts-about__icon-btn" href="https://www.instagram.com/_happykitchen.ru_/" target="_blank" rel="noopener noreferrer">
                     <svg class="contacts-about__icon">
                         <use xlink:href="/img/sprite/sprite.svg#instagram-fill2"></use>
                     </svg>
-                </button>
+                </a>
             </div>
             <div class="contacts-about__accordion accordion" id="accordion">
                 <h3 class="accordion__title">Реквизиты компании</h3>
@@ -273,16 +267,16 @@
     <div class="video-reviews__header">
        <h2 class="video-reviews__title">О нас <br> говорят клиенты</h2>
        <div class="video-reviews__controls">
-          <button class="video-reviews__button-previous">
+          <button class="video-reviews__button video-reviews__button_previous">
              <svg class="video-reviews__arrow" viewBox="0 0 19 16" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.86 15.1875L0.453749 8.78125L0.453749 6.9875L6.86 0.581249L8.67938 2.375L4.47688 6.60312L18.75 6.60312L18.75 9.16563L4.47688 9.16562L8.705 13.3937L6.86 15.1875Z"></path>
              </svg>
-          </button>
+          </button>          
           <div class="video-reviews__pagination">
              <!-- <span class="video-reviews__pagination_current">1</span>
              <span class="video-reviews__pagination_total">/3</span> -->
           </div>
-          <button class="video-reviews__button-next">
+          <button class="video-reviews__button video-reviews__button_next">
              <svg class="video-reviews__arrow" viewBox="0 0 19 16" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.14 0.8125L18.5463 7.21875V9.0125L12.14 15.4187L10.3206 13.625L14.5231 9.39688H0.25V6.83437H14.5231L10.295 2.60625L12.14 0.8125Z"></path>
              </svg>
@@ -296,10 +290,13 @@
                 <div class="video-reviews__progress-bar">
                     <span class="video-reviews__progress"></span>
                 </div>
-                <video class="video-reviews__video" poster="/video/posters/1.jpg" preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
-                    <source src="/video/video/1.mp4" type="video/mp4">
+                <video class="video-reviews__video lazy-video" autoplay preload="" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                    <source data-src="../../img/video(test)/10.mp4" type="video/mp4">
                 </video>
-                <button class="video-reviews__button-play" tabindex="0">
+                <div class="video-reviews__preloader" id="preloader">
+                    <span id="loader"></span>
+                </div>
+                <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
                     <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
                     </svg>
@@ -315,10 +312,13 @@
                 <div class="video-reviews__progress-bar">
                     <span class="video-reviews__progress"></span>
                 </div>
-                <video class="video-reviews__video" poster="/video/posters/1.jpg" preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
-                    <source src="/video/video/1.mp4" type="video/mp4">
+                <video class="video-reviews__video lazy-video" autoplay preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                    <source data-src="../../img/video(test)/2.mp4" type="video/mp4">
                 </video>
-                <button class="video-reviews__button-play" tabindex="0">
+                <div class="video-reviews__preloader" id="preloader">
+                    <span id="loader"></span>
+                </div>
+                <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
                     <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
                     </svg>
@@ -334,10 +334,13 @@
                 <div class="video-reviews__progress-bar">
                     <span class="video-reviews__progress"></span>
                 </div>
-                <video class="video-reviews__video" poster="/video/posters/1.jpg" preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
-                    <source src="/video/video/1.mp4" type="video/mp4">
+                <video class="video-reviews__video lazy-video" autoplay preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                    <source data-src="../../img/video(test)/3.mp4" type="video/mp4">
                 </video>
-                <button class="video-reviews__button-play" tabindex="0">
+                <div class="video-reviews__preloader" id="preloader">
+                    <span id="loader"></span>
+                </div>
+                <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
                     <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
                     </svg>
@@ -353,10 +356,13 @@
                 <div class="video-reviews__progress-bar">
                     <span class="video-reviews__progress"></span>
                 </div>
-                <video class="video-reviews__video" poster="/video/posters/1.jpg" preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
-                    <source src="/video/video/1.mp4" type="video/mp4">
+                <video class="video-reviews__video lazy-video" autoplay preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                    <source data-src="../../img/video(test)/4.mp4" type="video/mp4">
                 </video>
-                <button class="video-reviews__button-play" tabindex="0">
+                <div class="video-reviews__preloader" id="preloader">
+                    <span id="loader"></span>
+                </div>
+                <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
                     <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
                     </svg>
@@ -372,10 +378,13 @@
                 <div class="video-reviews__progress-bar">
                     <span class="video-reviews__progress"></span>
                 </div>
-                <video class="video-reviews__video" poster="/video/posters/1.jpg" preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
-                    <source src="/video/video/1.mp4" type="video/mp4">
+                <video class="video-reviews__video lazy-video" autoplay preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                    <source data-src="../../img/video(test)/5.mp4" type="video/mp4">
                 </video>
-                <button class="video-reviews__button-play" tabindex="0">
+                <div class="video-reviews__preloader" id="preloader">
+                    <span id="loader"></span>
+                </div>
+                <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
                     <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
                     </svg>
@@ -391,10 +400,13 @@
                 <div class="video-reviews__progress-bar">
                     <span class="video-reviews__progress"></span>
                 </div>
-                <video class="video-reviews__video" poster="/video/posters/1.jpg" preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
-                    <source src="/video/video/1.mp4" type="video/mp4">
+                <video class="video-reviews__video lazy-video" autoplay preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                    <source data-src="../../img/video(test)/6.mp4" type="video/mp4">
                 </video>
-                <button class="video-reviews__button-play" tabindex="0">
+                <div class="video-reviews__preloader" id="preloader">
+                    <span id="loader"></span>
+                </div>
+                <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
                     <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
                     </svg>
@@ -407,6 +419,7 @@
         </div>
      </div>
 </section>
+
 </main>
 <section class="footer">
     <div class="container footer__container">

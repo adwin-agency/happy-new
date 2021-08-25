@@ -60,6 +60,9 @@
     &__icon-btn {
         background-color: transparent;
         cursor: pointer;
+        &:not(:last-child) {
+            margin-right: 25px;
+        }
     }
     &__icon {
         fill: #2E3831;
