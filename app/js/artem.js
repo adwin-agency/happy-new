@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "use strict"
   // import Swiper JS
   import Swiper from 'swiper';
@@ -6,9 +5,6 @@
   import 'swiper/swiper-bundle.css';
 
 const initFunctions = ()=> {
-=======
-const initFunctions = () => {
->>>>>>> main
     map();
     accordion();
     swiperVideo();
