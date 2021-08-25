@@ -13,7 +13,7 @@
         top: 0px;
         width: 100%;
         
-        z-index: 1000;
+        z-index: 15;
     }
 
 
@@ -217,6 +217,88 @@
         transition: .3s;
         opacity: 1;
     }
+    &__city_mob{
+        display: none;
+    }
+    &__city-desc{
+        
+    }
+    &__city-desc-wrapper{
+        position: relative;
+        
+    }
+    &__city-desc-popup{
+        position: absolute;
+        top: calc(100% + 30px);
+        left:-15px;
+        background: #f3f5f9;
+        box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+        z-index: 5;
+        width: 409px;
+        opacity: 0;
+        height: 0px;
+        transition: opacity .0s;
+        padding: 0;
+
+        &::after{
+            content:"";
+            position: absolute;
+            height: 28px;
+            width: 28px;
+            top:-14px;
+            left: 74px;
+            background: #f3f5f9;
+            transform: rotate(45deg);
+        }
+    }
+    
+    &__city-desc-popup.active{
+        opacity: 1;
+        height: auto;
+        padding: 39px 49px 33px;
+        transition: opacity .3s;
+    }
+    &__city-desc-title{
+        white-space: nowrap;
+        font-weight: 500;
+        color:black;
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    &__city-desc-row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__city-desc-btn{
+        height: 60px;
+        width: 140px;
+    }
+    &__city-text-desc{
+        color:#8E8E8E;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    &__city-icon-dsec{
+        width: 5px;
+        height: 4px;
+        margin-left: 14px;
+    }
+    &__city-select-desc{
+
+    }
+    &__city-desc-current{
+        display: flex;
+        align-items: center;
+    }
+    &__select-list-desc{
+        margin-top: 14px;
+        box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+        padding: 27px 0;
+        width: 170px;
+        z-index: 10;
+        background-color: #f3f5f9;
+    }
 }
 @media(min-width:960.9px){
     .header{
@@ -392,6 +474,12 @@
         }
         &__top{
             padding: 13px 0;
+        }
+        &__city_mob{
+            display: block;
+        }
+        &__city-desc{
+            display: none;
         }
 
     }
