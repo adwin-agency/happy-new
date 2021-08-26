@@ -26,8 +26,49 @@
                         <span class="header__burger-line"></span>
                     </div>
                 </div>
+                <div class="header__city-desc">
+                    <div class="header__city-desc-wrapper">
+                        <span class="select__current header__city-desc-current">
+                            <svg class="header__city-icon">
+                                <use xlink:href="/img/sprite/sprite.svg#plane"></use>
+                            </svg>
+                            <span class="select__current-text header__city-text">Санкт-Петербург</span>
+                        </span>
+                        <div class="header__city-desc-popup">
+                            <p class="header__city-desc-title">
+                                Вы находитесь в <span class="header__city-desc-current-title">Санкт-Петербурге</span>
+                            </p>
+                            <div class="header__city-desc-row">
+                                <button class="header__city-desc-btn btn btn_yellow">Да, верно</button>
+                                <div class="select__wrapper header__city-select-desc">
+                                    <select class="select__element" name="city" id="">
+                                        <option value="Санкт-Петербург">Санкт-Петербург</option>
+                                        <option value="Моска">Моска</option>
+                                        <option value="Казань">Казань</option>
+                                        <option value="Воронеж">Воронеж</option>
+                                    </select>
+                                    <div class="select__content ">
+                                        <span class="select__current header__city-desc-current">
 
-                <div class="header__city">
+                                            <span class="select__current-text header__city-text-desc">Нет, другой
+                                                город</span>
+                                            <svg class="header__city-icon-dsec">
+                                                <use xlink:href="/img/sprite/sprite.svg#angle-down"></use>
+                                            </svg>
+                                    </div>
+                                    </span>
+                                    <ul class="select__list header__select-list-desc">
+                                        <li class="select__item header__select-item">Санкт-Петербург</li>
+                                        <li class="select__item header__select-item selected">Моска</li>
+                                        <li class="select__item header__select-item">Казань</li>
+                                        <li class="select__item header__select-item">Воронеж</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__city header__city_mob">
                     <div class="select__wrapper header__city-select">
                         <select class="select__element" name="city" id="">
                             <option value="Санкт-Петербург">Санкт-Петербург</option>
@@ -63,7 +104,7 @@
                         <p class="header__work-time">с 9 до 22 без выходных</p>
                         <a href="tel:+78126777585" class="header__phone">+7 (812) 677 75 85</a>
                     </div>
-                    <button class="header__btn btn btn_yellow">
+                    <button class="header__btn btn btn_yellow popup-open" data-target="consult">
                         Консультация дизайнера
                     </button>
                 </div>

@@ -26,8 +26,49 @@
                         <span class="header__burger-line"></span>
                     </div>
                 </div>
+                <div class="header__city-desc">
+                    <div class="header__city-desc-wrapper">
+                        <span class="select__current header__city-desc-current">
+                            <svg class="header__city-icon">
+                                <use xlink:href="/img/sprite/sprite.svg#plane"></use>
+                            </svg>
+                            <span class="select__current-text header__city-text">Санкт-Петербург</span>
+                        </span>
+                        <div class="header__city-desc-popup">
+                            <p class="header__city-desc-title">
+                                Вы находитесь в <span class="header__city-desc-current-title">Санкт-Петербурге</span>
+                            </p>
+                            <div class="header__city-desc-row">
+                                <button class="header__city-desc-btn btn btn_yellow">Да, верно</button>
+                                <div class="select__wrapper header__city-select-desc">
+                                    <select class="select__element" name="city" id="">
+                                        <option value="Санкт-Петербург">Санкт-Петербург</option>
+                                        <option value="Моска">Моска</option>
+                                        <option value="Казань">Казань</option>
+                                        <option value="Воронеж">Воронеж</option>
+                                    </select>
+                                    <div class="select__content ">
+                                        <span class="select__current header__city-desc-current">
 
-                <div class="header__city">
+                                            <span class="select__current-text header__city-text-desc">Нет, другой
+                                                город</span>
+                                            <svg class="header__city-icon-dsec">
+                                                <use xlink:href="/img/sprite/sprite.svg#angle-down"></use>
+                                            </svg>
+                                    </div>
+                                    </span>
+                                    <ul class="select__list header__select-list-desc">
+                                        <li class="select__item header__select-item">Санкт-Петербург</li>
+                                        <li class="select__item header__select-item selected">Моска</li>
+                                        <li class="select__item header__select-item">Казань</li>
+                                        <li class="select__item header__select-item">Воронеж</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__city header__city_mob">
                     <div class="select__wrapper header__city-select">
                         <select class="select__element" name="city" id="">
                             <option value="Санкт-Петербург">Санкт-Петербург</option>
@@ -63,7 +104,7 @@
                         <p class="header__work-time">с 9 до 22 без выходных</p>
                         <a href="tel:+78126777585" class="header__phone">+7 (812) 677 75 85</a>
                     </div>
-                    <button class="header__btn btn btn_yellow">
+                    <button class="header__btn btn btn_yellow popup-open" data-target="consult">
                         Консультация дизайнера
                     </button>
                 </div>
@@ -351,7 +392,7 @@
             <p class="kitchen-small__cat">кухня</p>
             <div class="kitchen-small__line">
                 <a href="#" class="kitchen-small__title">Ферроль</a>
-                <button class="kitchen-small__btn"><span>Заказать расчёт</span>
+                <button class="kitchen-small__btn popup-open" data-target="calculation"><span>Заказать расчёт</span>
                     <svg class="kitchen-small__arrow">
                         <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
                     </svg>
@@ -395,7 +436,7 @@
             <p class="kitchen-small__cat">кухня</p>
             <div class="kitchen-small__line">
                 <a href="#" class="kitchen-small__title">Арриба</a>
-                <button class="kitchen-small__btn"><span>Заказать расчёт</span>
+                <button class="kitchen-small__btn popup-open" data-target="calculation"><span>Заказать расчёт</span>
                     <svg class="kitchen-small__arrow">
                         <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
                     </svg>
@@ -544,6 +585,142 @@
     </div>
 
 </section>
+<!--consult-->
+
+<div class="popup__wrapper" data-target="consult">
+    <div class="popup consult__popup">
+        <button class="popup__close">
+            <svg class="popup__close-icon">
+                <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
+            </svg>
+        </button>
+        <div class="popup__content">
+
+            <img src="/img/icons/consult-popup.svg" alt="" class="popup__img consult__img">
+            <h3 class="popup__header consult__header">Консультация дизайнера</h3>
+            <p class="popup__text consult__text">Дизайнер приедет в удобное вам время с 9:00 до 22:00, выслушает все
+                ваши пожелания, осуществит замер и будет вести ваш проект.<br><br><b> Вызов дизайнера и дизайн проект -
+                    бесплатно</b></p>
+            <form action="" class="popup__form" data-type="consult">
+                <div class="popup__fields-wrapper consult__fields-wrapper">
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Имя</label>
+                        <input type="text" class="popup__form__input input error" placeholder="Анатолий Игнатьевич"
+                            name="name">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Телефон</label>
+                        <input type="tel" class="popup__form__input input" placeholder="+7 (999) 999 99 99"
+                            name="phone">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Адрес и удобное время замера</label>
+                        <textarea name="text" class="popup__textarea textarea consult__textarea"
+                            placeholder="Ваши комментарии"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="popup__btn btn btn_yellow">Пригласить дизайнера</button>
+                <p class="popup__policy">Нажимая кнопку “Пригласить дизайнера”, вы соглашаетесь с <a href="#"
+                        class="popup__policy-link"> Политикой
+                        конфиденциальности</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--callback-->
+<div class="popup__wrapper" data-target="callback">
+    <div class="popup callback__popup">
+        <button class="popup__close">
+            <svg class="popup__close-icon">
+                <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
+            </svg>
+        </button>
+        <div class="popup__content">
+
+            <img src="/img/icons/callback-popup.svg" alt="" class="popup__img callback__img">
+            <h3 class="popup__header callback__header">Обратный звонок</h3>
+
+            <form action="" class="popup__form" data-type="callback">
+                <div class="popup__fields-wrapper callback__fields-wrapper">
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Имя</label>
+                        <input type="text" class="popup__form__input input error" placeholder="Анатолий Игнатьевич"
+                            name="name">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Телефон</label>
+                        <input type="tel" class="popup__form__input input" placeholder="+7 (999) 999 99 99"
+                            name="phone">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                </div>
+                <button type="submit" class="popup__btn btn btn_yellow">Пригласить дизайнера</button>
+                <p class="popup__policy">Нажимая кнопку “Отправить”, вы соглашаетесь с <a href="#"
+                        class="popup__policy-link"> Политикой
+                        конфиденциальности</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+<!--calculation-->
+
+
+<div class="popup__wrapper" data-target="calculation">
+    <div class="popup calculation__popup">
+        <button class="popup__close">
+            <svg class="popup__close-icon">
+                <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
+            </svg>
+        </button>
+        <div class="popup__content">
+
+            <img src="/img/icons/calculatiun-popup.svg" alt="" class="popup__img calculation__img">
+            <h3 class="popup__header calculation__header">Расчёт проекта</h3>
+
+            <form action="" class="popup__form" data-type="calculation">
+                <div class="popup__fields-wrapper calculation__fields-wrapper">
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Имя</label>
+                        <input type="text" class="popup__form__input input error" placeholder="Анатолий Игнатьевич"
+                            name="name">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Телефон</label>
+                        <input type="tel" class="popup__form__input input" placeholder="+7 (999) 999 99 99"
+                            name="phone">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Комментарий</label>
+                        <textarea name="text" id="" class="popup__textarea textarea calculation__textarea"
+                            placeholder="Укажите примерную длину гарнитура по стенам. Например, кухня угловая 1,5 м + 1,8 м с барной стойкой"></textarea>
+                    </div>
+                </div>
+                <div class="popup__attach">
+                    <label for="attach-inp" class="popup__attach-label">
+                        <div class="popup__attach-img">
+                            <svg class="popup__attach-icon">
+                                <use xlink:href="/img/sprite/sprite.svg#attach-popup"></use>
+                            </svg>
+
+                        </div>
+                        <span class="attach-text">Приложить эскиз или фото</span>
+                    </label>
+                    <input type="file" name="file" class="popup__attach-input" id="attach-inp">
+                </div>
+                <button type="submit" class="popup__btn btn btn_yellow">Рассчитать стоимость</button>
+                <p class="popup__policy">Нажимая кнопку “Рассчитать стоимость”, вы соглашаетесь с <a href="#"
+                        class="popup__policy-link"> Политикой
+                        конфиденциальности</a></p>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
