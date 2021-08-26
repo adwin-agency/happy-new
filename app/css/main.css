@@ -2749,23 +2749,23 @@ body.hidescroll {
     -webkit-box-shadow: 0px 10px 20px transparent;
             box-shadow: 0px 10px 20px transparent;
     cursor: pointer; }
-    .video-reviews__block._active {
+    .video-reviews__block._active._accent {
       -webkit-transform: scale(1.05) translate(5px, -5px);
           -ms-transform: scale(1.05) translate(5px, -5px);
               transform: scale(1.05) translate(5px, -5px);
       border-color: #0498CE;
       -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
               box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4); }
-      .video-reviews__block._active .video-reviews__play {
-        display: none; }
-      .video-reviews__block._active .video-reviews__stop {
-        display: block; }
-      .video-reviews__block._active .video-reviews__buttons_play-stop {
-        background-color: rgba(255, 255, 255, 0.7); }
-      .video-reviews__block._active .video-reviews__progress-bar {
-        opacity: 1; }
-      .video-reviews__block._active::after {
-        display: none; }
+    .video-reviews__block._active .video-reviews__play {
+      display: none; }
+    .video-reviews__block._active .video-reviews__stop {
+      display: block; }
+    .video-reviews__block._active .video-reviews__buttons_play-stop {
+      background-color: rgba(255, 255, 255, 0.7); }
+    .video-reviews__block._active .video-reviews__progress-bar {
+      opacity: 1; }
+    .video-reviews__block._active::after {
+      display: none; }
   .video-reviews__stop {
     display: none; }
   .video-reviews__play, .video-reviews__stop {
@@ -2795,7 +2795,7 @@ body.hidescroll {
             transform: translateZ(0); }
 
 @media (any-hover: hover) {
-  .video-reviews__block:hover {
+  .video-reviews__block_hover:hover {
     -webkit-transform: scale(1.05) translate(5px, -5px);
         -ms-transform: scale(1.05) translate(5px, -5px);
             transform: scale(1.05) translate(5px, -5px);

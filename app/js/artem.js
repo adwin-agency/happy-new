@@ -47,9 +47,14 @@ const accordion = () => {
 
 const videoPlayerHandler = () => {
 	const element = document.querySelector('.video-reviews');
-	if (element) {
-		document.addEventListener('scroll', onScroll);
+	const cards = document.querySelectorAll('.video-reviews__item');
 
+	if (element || cards) {
+		if (element) {
+			document.addEventListener('scroll', onScroll);
+		} else {
+			videoPlayer();
+		}
 		function onScroll() {
 			const elementTop = element.getBoundingClientRect().top;
 			const distanceTostartLoading = 100;
@@ -61,7 +66,8 @@ const videoPlayerHandler = () => {
 				document.removeEventListener('scroll', onScroll);
 			}
 		}
-	}
+
+	} else return
 }
 
 const swiperVideo = () => {
@@ -119,6 +125,7 @@ const swiperVideo = () => {
 // Video-container ==START==
 const videoPlayer = () => {
 	const cards = document.querySelectorAll('.video-reviews__item');
+	const slider = document.querySelector('.video-reviews');
 	if (cards) {
 		lazyVideo()
 		// Массив для новых карт с id
@@ -150,11 +157,13 @@ const videoPlayer = () => {
 			function classSettings() {
 				if (video.play && cardBlock.classList.contains('_active')) {
 					video.pause()
-					cardBlock.classList.remove('_active');
+					cardBlock.classList.remove('_active', '_accent');
 					video.muted = true;
 				} else {
-					video.play()
+					video.play();
 					cardBlock.classList.add('_active');
+					// Проверяем наличие слайдера т.к у нас есть отдельный компонент карточки и на него не нужен фокусра
+					slider ? cardBlock.classList.add('_accent') : '';
 					video.muted = false;
 					// Отправляем id карточки на сравнение
 					checkingPlayingOneVideo(cardBlock.getAttribute('data-id'))
@@ -175,7 +184,7 @@ const videoPlayer = () => {
 				const incomingId = id;
 
 				if (currentId !== incomingId) {
-					card.classList.remove('_active');
+					card.classList.remove('_active', '_accent');
 					video.muted = true;
 				} else return
 			})
