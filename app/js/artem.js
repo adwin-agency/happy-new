@@ -166,7 +166,7 @@ const videoPlayer = () => {
 					slider ? cardBlock.classList.add('_accent') : '';
 					video.muted = false;
 					// Отправляем id карточки на сравнение
-					checkingPlayingOneVideo(cardBlock.getAttribute('data-id'))
+					checkingPlayingOneVideo(cardBlock.getAttribute('data-id'), video)
 				}
 			}
 
