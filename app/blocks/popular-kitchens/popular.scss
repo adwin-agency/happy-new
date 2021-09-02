@@ -13,7 +13,34 @@
     } 
     &__btn{
         display: none;
-    }  
+    } 
+    &__header-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__header-link{
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #0498CE;
+        white-space: nowrap;
+    }
+    &__header-link-icon{
+        width: 18px;
+        height: 12px;
+        margin-left: 20px;
+        transition: .3s;
+    }
+    &__header-link:hover &__header-link-icon{
+        transform: translateX(10px);
+    }
+
+
 }
 @media(max-width:1440px){
     .popular{
@@ -42,8 +69,11 @@
 @media(max-width:768px){
     .popular{
         &__header{
-         padding-right: 20px;
+         
          margin-bottom: 23px;
+        }
+        &__header-wrapper{
+            padding-right: 20px;
         }
         &__container{
             max-width: 100%;
@@ -66,6 +96,16 @@
         } 
         &__btn-wrapper{
             padding: 0 20px;
+        }
+    }
+}
+@media(max-width:400px){
+    .popular{
+        &__header{
+            font-size: 27px;
+        }
+        &__header-link{
+            font-size: 11px;
         }
     }
 }

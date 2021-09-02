@@ -1,6 +1,16 @@
 <section class="popular">
     <div class="container popular__container">
-        <h3 class="popular__header">Популярные кухни</h3>
+        <div class="popular__header-wrapper">
+            <h3 class="popular__header">Популярные кухни</h3>
+            <a href="#" class="popular__header-link">
+                <span>Все кухни</span>
+                <svg class="popular__header-link-icon">
+                    <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                </svg>
+            </a>
+
+        </div>
+
         <ul class="popular__list">
             @@include("../kitchen/kitchen-small.html",{
             img:'/img/kitchens/kit (1).jpg',

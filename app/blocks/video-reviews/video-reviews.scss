@@ -115,11 +115,18 @@
         box-shadow: 0px 10px 20px transparent;
         cursor: pointer;
         &._active {
+<<<<<<< HEAD
             &._accent {
                 transform: scale(1.05) translate(5px, -5px);
                 border-color: #0498CE;
                 box-shadow: 0px 10px 20px rgba(0, 0, 0, .4);
             }
+=======
+            transform: scale(1.05) translate(5px, -5px);
+            border-color: #0498CE;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, .4);
+            
+>>>>>>> main
             .video-reviews__play {
                 display: none;
             }
@@ -165,7 +172,11 @@
 }
 @media (any-hover: hover) {
     .video-reviews {
+<<<<<<< HEAD
         &__block_hover {
+=======
+        &__block {
+>>>>>>> main
             &:hover {
                 transform: scale(1.05) translate(5px, -5px);
                 border-color: #0498CE;
