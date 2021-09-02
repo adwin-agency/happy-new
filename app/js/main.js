@@ -64,7 +64,7 @@ const burgerHandler = () => {
         });
     }
     document.body.addEventListener('click', (e) => {
-        if (!e.target.closest('.header__burger') && !e.target.closest('.header__nav') && !e.target.closest('.header__city')) {
+        if (!e.target.closest('.header__burger') && !e.target.closest('.header__nav') && !e.target.closest('.header__city') && burger.classList.contains('active')) {
             burger.classList.remove('active');
             nav.classList.remove('active');
             city.classList.remove('active');
@@ -183,6 +183,111 @@ const catalogSlider = () => {
             prevEl: '.swiper-button-prev',
         },
     });
+
+    /*detail page*/
+    const swiperDetailKitchenThumb = new Swiper('.kitchen-detail__thumbs', {
+        direction: 'horizontal',
+        slidesPerView: 5,
+        freeMode: true,
+        slideToClickedSlide: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+            320: {
+                direction: 'horizontal',
+
+            },
+            1441: {
+                direction: 'vertical',
+            }
+        }
+    });
+
+    const swiperDetailKitchen = new Swiper('.kitchen-detail__slider', {
+        slidesPerView: 1,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+            swiper: swiperDetailKitchenThumb
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            dynamicBullets: true,
+            dynamicMainBullets: 4
+        },
+    });
+
+    const thumbNav = document.querySelector('.kitchen-detail__thumb-next-icon');
+    if (thumbNav) {
+
+        thumbNav.addEventListener('click', () => {
+            if (!swiperDetailKitchen.isEnd) {
+                swiperDetailKitchen.slideTo(swiperDetailKitchen.activeIndex + 1, 1000, false)
+            }
+
+        });
+
+    }
+    if (window.innerWidth <= 960) {
+        const swiperMaterials = new Swiper('.materials__slider-wrapper', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.materials__next-js',
+                prevEl: '.materials__prev-js',
+            },
+        });
+    }
+
+    const swiperDetailMore = new Swiper('.detail-more-js', {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        navigation: {
+            nextEl: '.detail-next-js',
+            prevEl: '.detail-prev-js',
+        },
+        breakpoints: {
+            320: {
+                spaceBetween: 20,
+
+            },
+            961: {
+                spaceBetween: 30,
+
+            },
+            1441: {
+                spaceBetween: 60,
+            }
+        }
+    });
+
+    const swiperProduction = new Swiper('.production-slider-js', {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        navigation: {
+            nextEl: '.production-slider__next',
+        },
+        breakpoints: {
+            320: {
+                spaceBetween: 20,
+
+            },
+            415: {
+                spaceBetween: 25,
+
+            },
+            961: {
+                spaceBetween: 35,
+
+            },
+            1441: {
+                spaceBetween: 45,
+            }
+        }
+    });
 }
 
 
@@ -253,68 +358,102 @@ function inputTelHandler() {
 
 const horScroll = () => {
 
-
-    window.addEventListener('mousewheel', scrollHandler, false);
-
-
     const scrollBlock = document.querySelector('.scroll-block');
-    const scrollInner = document.querySelector('.scroll-content');
-
-    let flag = false;
-
-    function scrollHandler(e) {
-
-        const coords = scrollBlock.getBoundingClientRect();
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
 
-        let cond1 = e.deltaY > 0;
-        let cond2 = scrollTop + window.innerHeight >= Math.round(coords.bottom + pageYOffset - 400);
-        let cond3 = scrollBlock.scrollLeft + 17 < scrollInner.offsetWidth - document.documentElement.offsetWidth;
-        let condX = scrollTop + window.innerHeight <= Math.round(coords.bottom + pageYOffset + 400);
+    if (scrollBlock && window.innerWidth > 960) {
+        const scrollInner = document.querySelector('.scroll-content');
+        const scrollWrapper = document.querySelector('.scroll-wrapper');
+        const header = document.querySelector('.header').offsetHeight;
 
-        let cond4 = e.deltaY < 0;
-        let cond5 = scrollTop + window.innerHeight <= Math.round(coords.bottom + pageYOffset + 400);
-        let cond6 = scrollBlock.scrollLeft > 0;
-        let condY = scrollTop + window.innerHeight >= Math.round(coords.bottom + pageYOffset - 400);
+        scrollInner.style.height = document.documentElement.offsetHeight - header + 'px';
+        scrollInner.style.top = header + 'px';
 
-        if (cond1 && cond2 && cond3 && condX) {
-            window.scrollTo({
-                top: coords.bottom + scrollTop - window.innerHeight,
-                behavior: "smooth"
-            });
-            scrollShowHide('hide');
-            flag = true;
-        }
-        else if (cond4 && cond5 && cond6 && condY) {
-            window.scrollTo({
-                top: coords.bottom + scrollTop - window.innerHeight,
-                behavior: "smooth"
-            });
-            scrollShowHide('hide');
-            flag = true;
+        const scrollWrapperHeight = scrollWrapper.scrollWidth - document.documentElement.offsetWidth + scrollInner.offsetHeight + header;
+        scrollBlock.style.height = scrollWrapperHeight + 'px';
 
-        }
-        else if (flag) {
-            flag = false;
-            scrollShowHide('show');
-        }
+        window.addEventListener('scroll', scrollHandler, false);
 
+        let flag = true;
 
-        if (flag) {
+        function scrollHandler(e) {
 
-            scrollBlock.scrollLeft = scrollBlock.scrollLeft + e.deltaY / 2;
+            if (scrollInner.getBoundingClientRect().top == header && scrollBlock.getBoundingClientRect().top < 0) {
+
+                scrollWrapper.style.transform = 'translate(' + (scrollBlock.getBoundingClientRect().top) + 'px, 0)';
+                flag = true;
+            }
+            else if (scrollInner.getBoundingClientRect().top > header && flag) {
+
+                scrollWrapper.style.transform = 'translate(0px, 0)';
+
+                flag = false;
+            }
+            else if (scrollInner.getBoundingClientRect().top < header && flag) {
+
+                scrollWrapper.style.transform = 'translate(' + (-(scrollWrapper.scrollWidth - scrollWrapper.offsetWidth)) + 'px, 0)';
+                flag = false;
+            }
 
         }
     }
+
 }
 
+/*kitchen-detail fixed*/
+
+const fixKitchenInfo = () => {
+    let fixedBlock = document.querySelector('.kitchen-detail__fixed-mob');
+
+    if (window.innerWidth < 961 && window.innerWidth > 800 && fixedBlock) {
+        const footer = document.querySelector('.advantages');
+        document.addEventListener('scroll', () => {
+
+            if (footer.getBoundingClientRect().top - window.innerHeight < 0) {
+                fixedBlock.style.bottom = -fixedBlock.offsetHeight + 'px';
+            }
+            else {
+                fixedBlock.style.bottom = '0px';
+            }
+
+        })
+    }
+    else if (window.innerWidth <= 800 && fixedBlock) {
+        fixedBlock = document.querySelector('.kitchen-detail__button-fixed-wrapper');
+        const footer = document.querySelector('.advantages');
+        document.addEventListener('scroll', () => {
+
+
+            if (footer.getBoundingClientRect().top - window.innerHeight < 0) {
+                fixedBlock.style.bottom = -fixedBlock.offsetHeight + 'px';
+            }
+            else {
+                fixedBlock.style.bottom = '0px';
+            }
+        });
+    }
+}
+
+const productionAnimate = () => {
+    const animateBlock = document.querySelector('.production-animate-js');
+    let flag = true;
+    if (animateBlock) {
+        document.addEventListener('scroll', () => {
+            if (flag) {
+                let bottom = animateBlock.getBoundingClientRect().bottom - window.innerHeight;
+                if (bottom < 0) {
+                    animateBlock.classList.add('active');
+                    flag = false;
+                }
+            }
+        })
+    }
+}
 document.addEventListener('DOMContentLoaded', () => {
     selectHandler();
     burgerHandler();
     dropdownMobile();
     menuFix();
-    scrollShowHide();
     stickyMain();
     catalogSlider();
     changeCityDesc();
@@ -322,4 +461,6 @@ document.addEventListener('DOMContentLoaded', () => {
     popupClose();
     inputTelHandler();
     horScroll();
+    fixKitchenInfo();
+    productionAnimate();
 });
