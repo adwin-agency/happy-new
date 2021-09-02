@@ -56,20 +56,20 @@
             &_reverse {
                 .closet-catalog__card_big {
                     grid-column: 1 /span 3;
-                    grid-row: 1/ span 3;
+                    grid-row: 2/ span 3;
                 }
                 .closet-catalog__advertisement {
                     grid-column: 4;
-                    grid-row: 2;
+                    grid-row: 3;
                     justify-self: end;
                 }
                 .closet-catalog__card {
-                    grid-row: 4;
+                    grid-row: 1;
                     grid-column: span 2;
                 }
                 .closet-card__footer {
                     grid-column: 4;
-                    grid-row: 1;
+                    grid-row: 2;
                 }
             }
         }
