@@ -263,6 +263,31 @@ const catalogSlider = () => {
             }
         }
     });
+
+    const swiperProduction = new Swiper('.production-slider-js', {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        navigation: {
+            nextEl: '.production-slider__next',
+        },
+        breakpoints: {
+            320: {
+                spaceBetween: 20,
+
+            },
+            415: {
+                spaceBetween: 25,
+
+            },
+            961: {
+                spaceBetween: 35,
+
+            },
+            1441: {
+                spaceBetween: 45,
+            }
+        }
+    });
 }
 
 
@@ -409,6 +434,21 @@ const fixKitchenInfo = () => {
     }
 }
 
+const productionAnimate = () => {
+    const animateBlock = document.querySelector('.production-animate-js');
+    let flag = true;
+    if (animateBlock) {
+        document.addEventListener('scroll', () => {
+            if (flag) {
+                let bottom = animateBlock.getBoundingClientRect().bottom - window.innerHeight;
+                if (bottom < 0) {
+                    animateBlock.classList.add('active');
+                    flag = false;
+                }
+            }
+        })
+    }
+}
 document.addEventListener('DOMContentLoaded', () => {
     selectHandler();
     burgerHandler();
@@ -422,4 +462,5 @@ document.addEventListener('DOMContentLoaded', () => {
     inputTelHandler();
     horScroll();
     fixKitchenInfo();
+    productionAnimate();
 });
