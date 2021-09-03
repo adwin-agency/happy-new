@@ -1,0 +1,80 @@
+.workflow-consult {
+  position: relative;
+  padding: 30px 0 36px;
+
+  &__image {
+    position: absolute;
+    left: calc(50% - 790px);
+    top: 0;
+    width: 485px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .container {
+    padding-left: 610px;
+  }
+
+  &__main {
+    margin-top: 56px;
+    padding: 80px 0 61px;
+    background: #F7F7F7;
+    overflow: hidden;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -50px;
+  }
+
+  &__item {
+    width: calc(33.333% - 50px);
+    margin-right: 50px;
+    margin-bottom: 53px;
+  }
+
+  &__num {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 46px;
+    color: #FECF28;
+  }
+
+  &__desc {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #8E8E8E;
+  }
+
+  @media (max-width: 1600px) {
+    &__image {
+      left: 0;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    padding: 20px 0 0;
+    
+    .container {
+      padding-left: 570px;
+    }
+
+    &__main {
+      margin-top: 48px;
+      padding: 50px 0 0;
+    }
+
+    &__items {
+      margin-right: 0;
+    }
+
+    &__item {
+      width: calc(50% - 80px);
+      margin-right: 80px;
+      margin-bottom: 50px;
+    }
+  }
+}
