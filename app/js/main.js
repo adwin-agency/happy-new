@@ -470,6 +470,30 @@ const productionAnimate = () => {
         })
     }
 }
+
+/*svg animate*/
+
+const svgAnimate = () => {
+    const svg = document.querySelectorAll('.svg-anim');
+    if (svg.length > 0) {
+
+        svg.forEach((item, i) => {
+            item.style.strokeDasharray = item.getTotalLength();
+            item.style.strokeDashoffset = item.getTotalLength();
+
+
+
+            document.addEventListener('scroll', () => {
+                let bottom = item.getBoundingClientRect().bottom - window.innerHeight + 50;
+                if (bottom < 0 && window.getComputedStyle(item).strokeDashoffset != '0px') {
+                    item.style.transition = 'stroke-dashoffset 1.5s ease-out';
+                    item.style.strokeDashoffset = 0;
+                }
+            })
+        });
+
+    }
+}
 document.addEventListener('DOMContentLoaded', () => {
     selectHandler();
     burgerHandler();
@@ -484,4 +508,5 @@ document.addEventListener('DOMContentLoaded', () => {
     horScroll();
     fixKitchenInfo();
     productionAnimate();
+    svgAnimate();
 });
