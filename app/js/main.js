@@ -357,7 +357,7 @@ function phoneMask(e) {
         }
 
         val = val.match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/)
-        val = '+7' + (val[2] ? '(' + val[1] + ')' + val[2] : val[1] ? val[1] : '') + (val[3] ? '-' + val[3] : '') + (val[4] ? '-' + val[4] : '')
+        val = '+7' + (val[2] ? ' (' + val[1] + ') ' + val[2] : val[1] ? val[1] : '') + (val[3] ? '-' + val[3] : '') + (val[4] ? '-' + val[4] : '')
     }
 
     e.target.value = val
