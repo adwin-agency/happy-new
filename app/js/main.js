@@ -293,7 +293,7 @@ const catalogSlider = () => {
 
 /*popup handler*/
 
-const popupOpen = () => {
+const popupOpen = (type) => {
     const popupOpen = document.querySelectorAll('.popup-open');
     const popupWrappers = document.querySelectorAll('.popup__wrapper');
 
@@ -301,12 +301,33 @@ const popupOpen = () => {
         if (e.target.closest('.popup-open')) {
             const popup = e.target.closest('.popup-open').getAttribute('data-target');
 
-            popupWrappers.forEach(item => {
-                if (item.getAttribute('data-target') == popup) {
-                    item.classList.add('active');
-                    scrollShowHide('hide');
-                }
-            });
+            if (popup == 'img') {
+                const wrapper = document.querySelector('.media-inner')
+                const img = e.target.getAttribute('data-src');
+                const container = document.querySelector('.popup__wrapper[data-target="img"]');
+                wrapper.innerHTML = `<img src="${img}" class='popup__media'>`
+                container.classList.add('active');
+                scrollShowHide('hide');
+            }
+            else if (popup == 'video') {
+                e.preventDefault();
+                const wrapper = document.querySelector('.video-inner')
+                const video = e.target.closest('.popup-open').getAttribute('href');
+                const container = document.querySelector('.popup__wrapper[data-target="video"]');
+                wrapper.innerHTML = `<video  controls="controls" disablePictureInPicture autoplay=""  controlslist="nodownload" src="${video}" class='popup__media'></video>`;
+                container.classList.add('active');
+                scrollShowHide('hide');
+
+            }
+            else {
+                popupWrappers.forEach(item => {
+                    if (item.getAttribute('data-target') == popup) {
+                        item.classList.add('active');
+                        scrollShowHide('hide');
+                    }
+                });
+            }
+
         }
     });
 }
@@ -316,7 +337,7 @@ const popupClose = () => {
 
     popupWrappers.forEach(item => {
         item.addEventListener('click', (e) => {
-            if (!e.target.closest('.popup__content') || e.target.closest('.popup__close')) {
+            if (!e.target.closest('.popup-js') || e.target.closest('.close-js')) {
                 e.target.closest('.popup__wrapper').classList.remove('active');
                 scrollShowHide('show');
             }
