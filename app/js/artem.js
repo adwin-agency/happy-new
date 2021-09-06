@@ -1,75 +1,19 @@
 "use strict"
 const initFunctions = () => {
-	// contacts code ==START==
+	// contacts page ==START==
 	map();
 	accordion();
-	// contacts code ==END==
+	// contacts page ==END==
 
-	// Video
+	// closets page ==START==
 	videoPlayerHandler();
+	swiperAdvantages(); //swiper-slider
+	swiperClosetCard();
+	dotShow();
+	// closets page ==END==
 };
-// Yandex Cards ==START==
-const map = () => {
-	ymaps.ready(init);
 
-	function init() {
-		const myMap = new ymaps.Map("map", {
-			center: [59.9386, 30.3141],
-			zoom: 10,
-			controls: []
-		});
-	};
-};
-// Yandex Cards ==END==
-
-// Accordion ==START==
-const accordion = () => {
-	const accordions = document.querySelectorAll('.accordion');
-
-	if (accordions) {
-		accordions.forEach((accordion) => {
-			accordion.addEventListener('click', showAccElement)
-		});
-	};
-
-	function showAccElement() {
-		const accItem = this.querySelector('.accordion__item');
-		if (accItem) {
-			accItem.hasChildNodes() ? this.classList.toggle('_show') : console.log('There is no content in the accordion');
-			accItem.style.maxHeight ? accItem.style.maxHeight = null : accItem.style.maxHeight = accItem.scrollHeight + "px";
-		} else return
-	};
-};
-// Accordion ==END==
-
-
-// Swiper-video-reviews ==START==
-
-const videoPlayerHandler = () => {
-	const element = document.querySelector('.video-reviews');
-	const cards = document.querySelectorAll('.video-reviews__item');
-
-	if (element || cards) {
-		if (element) {
-			document.addEventListener('scroll', onScroll);
-		} else {
-			videoPlayer();
-		}
-		function onScroll() {
-			const elementTop = element.getBoundingClientRect().top;
-			const distanceTostartLoading = 100;
-
-			if (elementTop < window.innerHeight + distanceTostartLoading) {
-				element.classList.add('_active');
-				swiperVideo();
-				videoPlayer();
-				document.removeEventListener('scroll', onScroll);
-			}
-		}
-
-	} else return
-}
-
+// SwiperSettings ==START==
 const swiperVideo = () => {
 	const swiper = new Swiper('.video-reviews__container', {
 		pagination: {
@@ -120,7 +64,120 @@ const swiperVideo = () => {
 		}
 	});
 };
-// Swiper-video-reviews ==END==
+
+const swiperAdvantages = () => {
+	const swiper = new Swiper('.advantages-slider__container', {
+		spaceBetween: 10,
+		slideToClickedSlide: true,
+		slidesPerView: 2,
+		breakpoints: {
+			// when window width is >= 320px
+			200: {
+				slidesPerView: 1.1,
+				slidesPerGroup: 1,
+				spaceBetween: 20,
+			},
+			520: {
+				slidesPerView: 1.5,
+				slidesPerGroup: 1,
+				spaceBetween: 20,
+			},
+			// when window width is >= 450px
+			650: {
+				slidesPerView: 2.1,
+				slidesPerGroup: 1,
+				spaceBetween: 20
+			},
+			// when window width is >= 640px
+			890: {
+				slidesPerView: 2.5,
+				slidesPerGroup: 1,
+				spaceBetween: 30,
+			},
+			// when window width is >= 940px
+			960: {
+				slidesPerView: 2.2,
+				slidesPerGroup: 1,
+				spaceBetween: 40,
+			},
+		}
+	});
+};
+
+const swiperClosetCard = () => {
+	const swiper = new Swiper('.closet-card__image-container', {
+		slidesPerView: 1,
+		slidesPerGroup: 1,
+		navigation: {
+			nextEl: ".closet-card__arrow_right",
+			prevEl: ".closet-card__arrow_left",
+		},
+	});
+};
+// Swiper-video-reviews ==START==
+
+// Yandex Cards ==START==
+const map = () => {
+	ymaps.ready(init);
+
+	function init() {
+		const myMap = new ymaps.Map("map", {
+			center: [59.9386, 30.3141],
+			zoom: 10,
+			controls: []
+		});
+	};
+};
+// Yandex Cards ==END==
+
+// Accordion ==START==
+const accordion = () => {
+	const accordions = document.querySelectorAll('.accordion');
+
+	if (accordions) {
+		accordions.forEach((accordion) => {
+			accordion.addEventListener('click', showAccElement)
+		});
+	};
+
+	function showAccElement() {
+		const accItem = this.querySelector('.accordion__item');
+		if (accItem) {
+			accItem.hasChildNodes() ? this.classList.toggle('_show') : console.log('There is no content in the accordion');
+			accItem.style.maxHeight ? accItem.style.maxHeight = null : accItem.style.maxHeight = accItem.scrollHeight + "px";
+		} else return
+	};
+};
+// Accordion ==END==
+
+// Swiper-video-reviews ==START==
+const videoPlayerHandler = () => {
+	const element = document.querySelector('.video-reviews');
+	const cards = document.querySelectorAll('.video-reviews__item');
+
+	if (element || cards) {
+		if (element) {
+			document.addEventListener('scroll', onScroll);
+		} else {
+			videoPlayer();
+		}
+		function onScroll() {
+			const elementTop = element.getBoundingClientRect().top;
+			const distanceTostartLoading = 100;
+
+			if (elementTop < window.innerHeight + distanceTostartLoading) {
+				element.classList.add('_active');
+				swiperVideo();
+				videoPlayer();
+				document.removeEventListener('scroll', onScroll);
+			}
+		}
+
+	} else return
+}
+
+
+
 
 // Video-container ==START==
 const videoPlayer = () => {
@@ -162,7 +219,7 @@ const videoPlayer = () => {
 				} else {
 					video.play();
 					cardBlock.classList.add('_active');
-					// Проверяем наличие слайдера т.к у нас есть отдельный компонент карточки и на него не нужен фокусра
+					// Проверяем наличие слайдера т.к у нас есть отдельный компонент карточки и на него не нужен фокус
 					slider ? cardBlock.classList.add('_accent') : '';
 					video.muted = false;
 					// Отправляем id карточки на сравнение
@@ -251,6 +308,41 @@ const videoPlayer = () => {
 	}
 }
 // Video-container ==END==
+// Swiper-video-reviews ==END==
 
+// closets-advantages dot show ==START==
+const dotShow = () => {
+	const dotsContainer = document.querySelector('.closets-advantages__container')
+	if (dotsContainer) {
+		dotsContainer.addEventListener('click', checkClick)
+	}
+	function checkClick(event) {
+		const target = event.target;
+		if (!target.closest('.advantages-dot__content._active') && !target.closest('.advantages-dot')) {
+			hideContent(target)
+		}
+		if (target.classList.contains('advantages-dot')) {
+			hideContent(this)
+			showContent(target)
+		}
+		if (target.classList.contains('advantages-dot__close')) {
+			hideContent(target)
+		}
+	}
+	const showContent = (element) => {
+		const content = element.querySelector('.advantages-dot__content')
+		content.classList.add('_active');
+	}
+	const hideContent = (element) => {
+		const content = !element.closest('.advantages-dot__content') ? 
+		element.querySelector('.advantages-dot__content._active') : 
+		element.closest('.advantages-dot__content._active');
+		
+		if (content) {
+			content.classList.remove('_active');
+		}
 
+	}
+}
+// closets-advantages dot show ==END==
 document.addEventListener("DOMContentLoaded", initFunctions);
