@@ -183,7 +183,7 @@
     &__more-bg_first{
         width: 359px;
     height: 112px;
-    top: 0px;
+    top: -31px;
     left: -51px;
     }
     &__more-bg_second{
@@ -220,6 +220,10 @@
         top: 0px;
         left: 0px;
         z-index: 1;
+
+    }
+    &__svg-anim{
+        // transition: stroke-dashoffset 3s ease-out;
 
     }
 }

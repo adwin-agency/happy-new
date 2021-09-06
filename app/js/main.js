@@ -293,7 +293,7 @@ const catalogSlider = () => {
 
 /*popup handler*/
 
-const popupOpen = () => {
+const popupOpen = (type) => {
     const popupOpen = document.querySelectorAll('.popup-open');
     const popupWrappers = document.querySelectorAll('.popup__wrapper');
 
@@ -301,12 +301,33 @@ const popupOpen = () => {
         if (e.target.closest('.popup-open')) {
             const popup = e.target.closest('.popup-open').getAttribute('data-target');
 
-            popupWrappers.forEach(item => {
-                if (item.getAttribute('data-target') == popup) {
-                    item.classList.add('active');
-                    scrollShowHide('hide');
-                }
-            });
+            if (popup == 'img') {
+                const wrapper = document.querySelector('.media-inner')
+                const img = e.target.getAttribute('data-src');
+                const container = document.querySelector('.popup__wrapper[data-target="img"]');
+                wrapper.innerHTML = `<img src="${img}" class='popup__media'>`
+                container.classList.add('active');
+                scrollShowHide('hide');
+            }
+            else if (popup == 'video') {
+                e.preventDefault();
+                const wrapper = document.querySelector('.video-inner')
+                const video = e.target.closest('.popup-open').getAttribute('href');
+                const container = document.querySelector('.popup__wrapper[data-target="video"]');
+                wrapper.innerHTML = `<video  controls="controls" disablePictureInPicture autoplay=""  controlslist="nodownload" src="${video}" class='popup__media'></video>`;
+                container.classList.add('active');
+                scrollShowHide('hide');
+
+            }
+            else {
+                popupWrappers.forEach(item => {
+                    if (item.getAttribute('data-target') == popup) {
+                        item.classList.add('active');
+                        scrollShowHide('hide');
+                    }
+                });
+            }
+
         }
     });
 }
@@ -316,7 +337,7 @@ const popupClose = () => {
 
     popupWrappers.forEach(item => {
         item.addEventListener('click', (e) => {
-            if (!e.target.closest('.popup__content') || e.target.closest('.popup__close')) {
+            if (!e.target.closest('.popup-js') || e.target.closest('.close-js')) {
                 e.target.closest('.popup__wrapper').classList.remove('active');
                 scrollShowHide('show');
             }
@@ -336,7 +357,7 @@ function phoneMask(e) {
         }
 
         val = val.match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/)
-        val = '+7' + (val[2] ? '(' + val[1] + ')' + val[2] : val[1] ? val[1] : '') + (val[3] ? '-' + val[3] : '') + (val[4] ? '-' + val[4] : '')
+        val = '+7' + (val[2] ? ' (' + val[1] + ') ' + val[2] : val[1] ? val[1] : '') + (val[3] ? '-' + val[3] : '') + (val[4] ? '-' + val[4] : '')
     }
 
     e.target.value = val
@@ -449,6 +470,30 @@ const productionAnimate = () => {
         })
     }
 }
+
+/*svg animate*/
+
+const svgAnimate = () => {
+    const svg = document.querySelectorAll('.svg-anim');
+    if (svg.length > 0) {
+
+        svg.forEach((item, i) => {
+            item.style.strokeDasharray = item.getTotalLength();
+            item.style.strokeDashoffset = item.getTotalLength();
+
+
+
+            document.addEventListener('scroll', () => {
+                let bottom = item.getBoundingClientRect().bottom - window.innerHeight + 50;
+                if (bottom < 0 && window.getComputedStyle(item).strokeDashoffset != '0px') {
+                    item.style.transition = 'stroke-dashoffset 1.5s ease-out';
+                    item.style.strokeDashoffset = 0;
+                }
+            })
+        });
+
+    }
+}
 document.addEventListener('DOMContentLoaded', () => {
     selectHandler();
     burgerHandler();
@@ -463,4 +508,5 @@ document.addEventListener('DOMContentLoaded', () => {
     horScroll();
     fixKitchenInfo();
     productionAnimate();
+    svgAnimate();
 });

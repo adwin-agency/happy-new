@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/main.css">
 
     <script src="/js/artem.js"></script>
+    <script src="/js/ilya.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/libs.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
@@ -543,8 +544,8 @@
 <!--consult-->
 
 <div class="popup__wrapper" data-target="consult">
-    <div class="popup consult__popup">
-        <button class="popup__close">
+    <div class="popup consult__popup popup-js">
+        <button class="popup__close close-js">
             <svg class="popup__close-icon">
                 <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
             </svg>
@@ -587,8 +588,8 @@
 
 <!--callback-->
 <div class="popup__wrapper" data-target="callback">
-    <div class="popup callback__popup">
-        <button class="popup__close">
+    <div class="popup callback__popup popup-js">
+        <button class="popup__close close-js">
             <svg class="popup__close-icon">
                 <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
             </svg>
@@ -625,8 +626,8 @@
 
 
 <div class="popup__wrapper" data-target="calculation">
-    <div class="popup calculation__popup">
-        <button class="popup__close">
+    <div class="popup calculation__popup popup-js">
+        <button class="popup__close close-js">
             <svg class="popup__close-icon">
                 <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
             </svg>
@@ -673,6 +674,36 @@
                         class="popup__policy-link"> Политикой
                         конфиденциальности</a></p>
             </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- media -->
+<div class="popup__wrapper" data-target="img">
+    <div class="media-wrapper  popup-js">
+        <div class="close-media close-js">
+            <svg class="close-media__icon">
+                <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
+            </svg>
+        </div>
+
+        <div class="media-inner">
+
+        </div>
+    </div>
+</div>
+
+<div class="popup__wrapper" data-target="video">
+    <div class="media-wrapper  popup-js">
+        <div class="close-media close-js">
+            <svg class="close-media__icon">
+                <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
+            </svg>
+        </div>
+
+        <div class="video-inner">
+
         </div>
     </div>
 </div>
