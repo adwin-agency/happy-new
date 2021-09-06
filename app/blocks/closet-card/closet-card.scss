@@ -1,6 +1,7 @@
 .closet-card {
     width: 100%;
-
+    position: relative;
+    overflow: hidden;
     &__footer {
         display: flex;
         justify-content: space-between;
@@ -21,6 +22,46 @@
             object-fit: cover;
         }
     }
+    &__image-container {
+        position: relative;
+    }
+    &__controls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+    &__arrow {
+        fill: #fff;
+        position: absolute;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+        width: 10%;
+        top: 0;
+        cursor: pointer;
+        &.swiper-button-disabled{
+            cursor: auto;
+            & .closet-card__arrow-icon {
+                opacity: .2;
+            }
+        }
+    }
+    &__arrow_left {
+        left: 0;
+        height: -90%;
+    }
+    &__arrow_right {
+        transform: rotate(180deg);
+        right: 0;
+    }
+    &__arrow-icon {
+        position: relative;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 20px;
+    }
     &__discount {
         position: absolute;
         top: 0;
@@ -34,6 +75,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 3;
     }
 }
 @media(max-width:1440px){
