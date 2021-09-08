@@ -1,5 +1,6 @@
 .filter{
-    padding: 24px 0 45px;
+    padding-top: 24px;
+    padding-bottom: 45px;
     display: flex;
         justify-content: space-between;
         align-items: center;
@@ -80,19 +81,16 @@
         background-color: #F7F7F7;
     }
 }
-
-
 @media(max-width:1440px){
-
     .filter{
         padding-top: 45px;
     }
 }
-
 @media(max-width:930px){
-
     .filter{   
-        padding: 0px 10px 35px; 
+        padding: 0px 10px 35px;
+        // max-width: 523px;
+        width: 100%;
         &__radios{
             display: none;
         }
@@ -119,20 +117,20 @@
         }
         &__mob-select-list{
             padding: 27px 0;
-        background-color: white;
-        box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
-        margin-top: 14px;
-        width: 100%;
-        z-index: 10;
+            background-color: white;
+            box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+            margin-top: 14px;
+            width: 100%;
+            z-index: 10;
         }
         &__mob-select-item{
             text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
-        font-size: 13px;
-        color: #8E8E8E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            font-size: 13px;
+            color: #8E8E8E;
 
         }
         &__sort-text{
@@ -159,9 +157,7 @@
     }
 }
 @media(max-width:414px){
-
     .filter{
-        
         &__mob-current{
             width: 214px;
             padding: 0 18px 0 19px;

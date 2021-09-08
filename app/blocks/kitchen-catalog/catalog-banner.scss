@@ -3,9 +3,6 @@
     max-width: 100%;
     overflow: hidden;
    
-    &__banner{
-        background-color: #FECF28;
-    }
     &__container{
         display: grid;
         grid-template-columns: 950px 1fr;
@@ -38,6 +35,9 @@
         display: flex;
         max-width: 490px;
         justify-content: space-between;
+        &_space {
+            margin-top: 23px;
+        }
     }
     &__list-item{
         max-width: 106px;
@@ -75,6 +75,7 @@
     padding-top: 65px;
     padding-right: 82px;
     padding-bottom: 102px;
+    background-color: #FECF28;
     &:after{
         content:"%";
         font-size: 588px;
@@ -147,6 +148,21 @@
     }
     
 }
+// .closet-banner {
+//     &__image {
+//         width: 100%;
+//         height: 100%;
+//         position: relative;
+//         left: 100%;
+//         width: 0;
+//         overflow: visible;
+//         img {
+//             width: 100%;
+//             height: 100%;
+//             object-fit: cover;
+//         }
+//     }
+// }
 @media(max-width:1440px){
     .catalog-top{
         &__container{

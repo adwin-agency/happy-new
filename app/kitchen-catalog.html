@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="../css/libs.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <script src="/js/artem.js"></script>
+    <script src="/js/ilya.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/libs.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <section class="header fixed">
+        <div class="header__container container">
+            <div class="header__top">
+                <div class="header__burger-wrapper">
+                    <div class="header__burger">
+                        <span class="header__burger-line"></span>
+                        <span class="header__burger-line"></span>
+                        <span class="header__burger-line"></span>
+                    </div>
+                </div>
+                <div class="header__city-desc">
+                    <div class="header__city-desc-wrapper">
+                        <span class="select__current header__city-desc-current">
+                            <svg class="header__city-icon">
+                                <use xlink:href="/img/sprite/sprite.svg#plane"></use>
+                            </svg>
+                            <span class="select__current-text header__city-text">Санкт-Петербург</span>
+                        </span>
+                        <div class="header__city-desc-popup">
+                            <p class="header__city-desc-title">
+                                Вы находитесь в <span class="header__city-desc-current-title">Санкт-Петербурге</span>
+                            </p>
+                            <div class="header__city-desc-row">
+                                <button class="header__city-desc-btn btn btn_yellow">Да, верно</button>
+                                <div class="select__wrapper header__city-select-desc">
+                                    <select class="select__element" name="city" id="">
+                                        <option value="Санкт-Петербург">Санкт-Петербург</option>
+                                        <option value="Моска">Моска</option>
+                                        <option value="Казань">Казань</option>
+                                        <option value="Воронеж">Воронеж</option>
+                                    </select>
+                                    <div class="select__content ">
+                                        <span class="select__current header__city-desc-current">
+
+                                            <span class="select__current-text header__city-text-desc">Нет, другой
+                                                город</span>
+                                            <svg class="header__city-icon-dsec">
+                                                <use xlink:href="/img/sprite/sprite.svg#angle-down"></use>
+                                            </svg>
+                                    </div>
+                                    </span>
+                                    <ul class="select__list header__select-list-desc">
+                                        <li class="select__item header__select-item">Санкт-Петербург</li>
+                                        <li class="select__item header__select-item selected">Моска</li>
+                                        <li class="select__item header__select-item">Казань</li>
+                                        <li class="select__item header__select-item">Воронеж</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__city header__city_mob">
+                    <div class="select__wrapper header__city-select">
+                        <select class="select__element" name="city" id="">
+                            <option value="Санкт-Петербург">Санкт-Петербург</option>
+                            <option value="Моска">Моска</option>
+                            <option value="Казань">Казань</option>
+                            <option value="Воронеж">Воронеж</option>
+                        </select>
+                        <div class="select__content ">
+                            <span class="select__current">
+                                <svg class="header__city-icon">
+                                    <use xlink:href="/img/sprite/sprite.svg#plane"></use>
+                                </svg>
+                                <span class="select__current-text header__city-text">Санкт-Петербург</span>
+                        </div>
+                        </span>
+                        <ul class="select__list header__select-list">
+                            <li class="select__item header__select-item">Санкт-Петербург</li>
+                            <li class="select__item header__select-item">Моска</li>
+                            <li class="select__item header__select-item">Казань</li>
+                            <li class="select__item header__select-item">Воронеж</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="/" class="header__main">
+                    <picture>
+                        <source srcset="/img/icons/logo_mobile.svg" media="(max-width: 1400px)">
+                        <img src="/img/icons/HK-logo.svg" alt="" class="header__logo">
+                    </picture>
+
+                </a>
+                <div class="header__right">
+                    <div class="header__info">
+                        <p class="header__work-time">с 9 до 22 без выходных</p>
+                        <a href="tel:+78126777585" class="header__phone">+7 (812) 677 75 85</a>
+                    </div>
+                    <button class="header__btn btn btn_yellow popup-open" data-target="consult">
+                        Консультация дизайнера
+                    </button>
+                </div>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item header__nav-item_with-child">
+                        <div class="header__nav-link-container">
+                            <a href="#" class="header__nav-link">
+                                Кухни
+                            </a>
+                            <div class="header__dropdown-open-mobile">
+                                <span class="header__dropdown-open-mobile-line"></span>
+                                <span class="header__dropdown-open-mobile-line"></span>
+                            </div>
+                        </div>
+                        <div class="header__dropdown-container">
+                            <ul class="header__dropdown">
+                                <li class="header__dropdown-item header__dropdown-item_desk">
+                                    <a href="#" class="header__dropdown-link header__dropdown-link">
+                                        <img src="/img/icons/HK-logo_1-6.svg" alt="" class="header__dropdown-icon">
+                                        <span><b>Все кухни</b></span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <img src="/img/icons/HK-logo_1-2.svg" alt="" class="header__dropdown-icon">
+                                        <span>Прямые кухни</span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <img src="/img/icons/HK-logo_1-3.svg" alt="" class="header__dropdown-icon">
+                                        <span>Угловые кухни</span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <img src="/img/icons/HK-logo_1-4.svg" alt="" class="header__dropdown-icon">
+                                        <span>Маленькие кухни</span>
+                                    </a>
+                                </li>
+
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <img src="/img/icons/HK-logo_1-5.svg" alt="" class="header__dropdown-icon">
+                                        <span>Кухни с барной стойкой</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Шкафы</a>
+                    </li>
+                    <li class="header__nav-item header__nav-item_with-child">
+                        <div class="header__nav-link-container">
+                            <a href="#" class="header__nav-link">Техника</a>
+                            <div class="header__dropdown-open-mobile">
+                                <span class="header__dropdown-open-mobile-line"></span>
+                                <span class="header__dropdown-open-mobile-line"></span>
+                            </div>
+                        </div>
+                        <div class="header__dropdown-container">
+                            <ul class="header__dropdown header__dropdown_without-image">
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <span>Варочные панели</span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <span>Духовые шкафы</span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <span>Холодильники</span>
+                                    </a>
+                                </li>
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <span>Посудомоечные машины</span>
+                                    </a>
+                                </li>
+
+                                <li class="header__dropdown-item">
+                                    <a href="#" class="header__dropdown-link">
+                                        <span>Вытяжки</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Мойки</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Материалы</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Процесс работы</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Отзывы</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <body>
+<main class="main">
+    <section class="catalog-top">
+    <div class="catalog-top__wrapper">
+        <div class="container catalog-top__container">
+            <div class="catalog-top__banner kitchen-banner">
+                <div class="kitchen-banner__wrapper">
+                    <div class="kitchen-banner__text">
+                        <p class="kitchen-banner__top">в этом месяце</p>
+                        <div class="kitchen-banner__row">
+                            <p class="kitchen-banner__text">скидки<br>на все <br>кухни</p>
+                            <p class="kitchen-banner__discount">-70%</p>
+                        </div>
+                        <p class="kitchen-banner__prize">3D дизайн-проект<br>кухни <span
+                                class="kitchen-banner__prize_blue">в
+                                подарок</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog-top__info">
+                <ul class="breadcrumbs">
+                    <li class="breadcrumbs-item">
+                        <a href="#" class="breadcrumbs__link">Главная //</a>
+                    </li>
+                    <li class="breadcrumbs-item">
+                        <a href="#" class="breadcrumbs__link">Категория //</a>
+                    </li>
+                    <li class="breadcrumbs-item">
+                        <a href="#" class="breadcrumbs__link">Подкатегория</a>
+                    </li>
+                </ul>
+                <div class="catalog-top__hedaer">Угловые кухни</div>
+                <div class="catalog-top__description">Одна из самых практичных и вариативных планировок для вашей кухни.
+                </div>
+                <ul class="catalog-top__list">
+                    <li class="catalog-top__list-item">
+                        <p class="catalog-top__num">24</p>
+                        <p class="catalog-top__text">месяца <br>гарантии</p>
+                    </li>
+                    <li class="catalog-top__list-item">
+                        <p class="catalog-top__num">0%</p>
+                        <p class="catalog-top__text">рассрочка<br> на 6 месяцев</p>
+                    </li>
+                    <li class="catalog-top__list-item">
+                        <p class="catalog-top__num"><span class="catalog-top__num-text">от</span>14</p>
+                        <p class="catalog-top__text">дней - срок<br> изготовления</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+    <form action="" class="filter container">
+    <ul class="filter__radios">
+        <li class="filter__radio-item">
+            <input type="radio" name="kitchen-type" id="all" class="filter__radio-btn" checked>
+            <label for="all" class="filter__radio-label">Все планировки</label>
+        </li>
+        <li class="filter__radio-item">
+            <input type="radio" name="kitchen-type" id="corner" class="filter__radio-btn">
+            <label for="corner" class="filter__radio-label">Угловые</label>
+        </li>
+        <li class="filter__radio-item">
+            <input type="radio" name="kitchen-type" id="straight" class="filter__radio-btn">
+            <label for="straight" class="filter__radio-label">Прямые</label>
+        </li>
+        <li class="filter__radio-item">
+            <input type="radio" name="kitchen-type" id="small" class="filter__radio-btn">
+            <label for="small" class="filter__radio-label">Маленькие</label>
+        </li>
+    </ul>
+    <div class="select__wrapper filter__mob">
+        <select class="select__element" name="kitchens-form">
+            <option value="Все планировки">Все планировки</option>
+            <option value=Угловые>Угловые</option>
+            <option value=Прямые>Прямые</option>
+            <option value=Маленькие>Маленькие</option>
+        </select>
+        <div class="select__content">
+            <span class="select__current filter__mob-current">
+                <span class="select__current-text filter__mob-text">Все планировки</span>
+                <svg class="filter__mob-icon">
+                    <use xlink:href="/img/sprite/sprite.svg#angle-down-black"></use>
+                </svg>
+            </span>
+        </div>
+
+        <ul class="select__list filter__mob-select-list">
+            <li class="select__item filter__mob-select-item">Все планировки</li>
+            <li class="select__item filter__mob-select-item">Угловые</li>
+            <li class="select__item filter__mob-select-item">Прямые</li>
+            <li class="select__item filter__mob-select-item">Маленькие</li>
+        </ul>
+    </div>
+
+    <div class="select__wrapper filter__sort">
+        <select class="select__element" name="kitchens-sort" id="">
+            <option value="По популярности">По популярности</option>
+            <option value="Сначала дешевле">Сначала дешевле</option>
+            <option value="Сначала дороже">Сначала дороже</option>
+
+        </select>
+        <div class="select__content">
+            <span class="select__curren filter__sort-current">
+                <span class="select__current-text filter__sort-text">По популярности</span>
+                <svg class="filter__sort-icon">
+                    <use xlink:href="/img/sprite/sprite.svg#angle-down"></use>
+                </svg>
+            </span>
+        </div>
+
+        <ul class="select__list filter__sort-select-list">
+            <li class="select__item filter__sort-select-item">По популярности</li>
+            <li class="select__item filter__sort-select-item">Сначала дешевле</li>
+            <li class="select__item filter__sort-select-item">Сначала дороже</li>
+        </ul>
+    </div>
+</form>
+    <section class="catalog">
+    <div class="container catalog__container">
+        <ul class="catalog__goods">
+            <li class="kitchen-small">
+    <div class="kitchen-small__slider-wrapper swiper-container kitchen-small__slider_js">
+        <ul class="kitchen-small__slider swiper-wrapper">
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="kitchen-small__discount">-70%</div>
+    </div>
+    <div class="kitchen-small__data">
+        <div class="kitchen-small__left">
+            <p class="kitchen-small__cat">кухня</p>
+            <div class="kitchen-small__line">
+                <a href="#" class="kitchen-small__title">Ферроль</a>
+                <button class="kitchen-small__btn popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                    <svg class="kitchen-small__arrow">
+                        <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="kitchen-small__cost">
+                <p class="kitchen-small__price">48 700 ₽</p>
+                <p class="kitchen-small__old-price">48 700 ₽</p>
+            </div>
+
+        </div>
+
+    </div>
+</li>
+            <li class="kitchen-small">
+    <div class="kitchen-small__slider-wrapper swiper-container kitchen-small__slider_js">
+        <ul class="kitchen-small__slider swiper-wrapper">
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="kitchen-small__discount">-70%</div>
+    </div>
+    <div class="kitchen-small__data">
+        <div class="kitchen-small__left">
+            <p class="kitchen-small__cat">кухня</p>
+            <div class="kitchen-small__line">
+                <a href="#" class="kitchen-small__title">Арриба</a>
+                <button class="kitchen-small__btn popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                    <svg class="kitchen-small__arrow">
+                        <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="kitchen-small__cost">
+                <p class="kitchen-small__price">54 650 ₽</p>
+                <p class="kitchen-small__old-price">54 650 ₽</p>
+            </div>
+
+        </div>
+
+    </div>
+</li>
+
+            <li class="kitchen-big kitchen-big_text-left">
+    <div class="kitchen-big__slider-wrapper swiper-container kitchen-big__slider_js">
+        <ul class="kitchen-big__slider swiper-wrapper">
+            <li class="kitchen-big__slider-item swiper-slide">
+                <a href="" class="kitchen-big__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-big__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-big__slider-item swiper-slide">
+                <a href="" class="kitchen-big__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-big__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-big__slider-item swiper-slide">
+                <a href="" class="kitchen-big__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-big__slider-img">
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="kitchen-big__discount">-70%</div>
+    </div>
+    <div class="kitchen-big__data">
+        <div class="kitchen-big__left">
+            <p class="kitchen-big__cat">кухня</p>
+            <div class="kitchen-big__line">
+                <a href="#" class="kitchen-big__title">Арриба</a>
+                <button class="kitchen-big__btn-mob popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                    <svg class="kitchen-big__arrow">
+                        <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                    </svg>
+                </button>
+            </div>
+            <ul class="kitchen-big__info-list">
+                <li class="kitchen-big__info-item">
+                    <p class="kitchen-big__info-hedaer">Планировка</p>
+                    <p class="kitchen-big__info-text">Угловая</p>
+                </li>
+                <li class="kitchen-big__info-item">
+                    <p class="kitchen-big__info-hedaer">Стиль</p>
+                    <p class="kitchen-big__info-text">Минимализм</p>
+                </li>
+                <li class="kitchen-big__info-item">
+                    <p class="kitchen-big__info-hedaer">Фасад</p>
+                    <p class="kitchen-big__info-text">МДФ</p>
+                </li>
+            </ul>
+            <div class="kitchen-big__cost">
+                <p class="kitchen-big__price">54 650 ₽</p>
+                <p class="kitchen-big__old-price">54 650 ₽</p>
+            </div>
+            <button class="kitchen-big__btn-desc popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                <svg class="kitchen-big__arrow">
+                    <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                </svg>
+            </button>
+            <div class="kitchen-big__more">
+                <p class="kitchen-big__more-hedaer">А ещё ко всем кухням мы предлагаем:</p>
+                <div class="kitchen-big__more-content">
+                    <div class="kitchen-big__more-bg kitchen-big__more-bg_first">
+                        <svg viewBox="0 0 323 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24.2979 90.0838C3.59294 71.3339 17.2692 9.36453 180.325 13.2414C343.381 17.1182 372.279 78.9422 199.888 110.213C27.4975 141.484 -2.48833 94.3388 9.61301 71.4601" stroke="#FECF28" stroke-width="5" stroke-linecap="square"
+                                class="kitchen-big__svg-anim svg-anim" />
+                        </svg>
+                    </div>
+                    <p class="kitchen-big__more-title">Бесплатные</p>
+                    <p class="kitchen-big__more-text">выезд и консультацию<br> дизайнера на месте</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</li>
+
+            <li class="kitchen-small">
+    <div class="kitchen-small__slider-wrapper swiper-container kitchen-small__slider_js">
+        <ul class="kitchen-small__slider swiper-wrapper">
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="kitchen-small__discount">-70%</div>
+    </div>
+    <div class="kitchen-small__data">
+        <div class="kitchen-small__left">
+            <p class="kitchen-small__cat">кухня</p>
+            <div class="kitchen-small__line">
+                <a href="#" class="kitchen-small__title">Ферроль</a>
+                <button class="kitchen-small__btn popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                    <svg class="kitchen-small__arrow">
+                        <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="kitchen-small__cost">
+                <p class="kitchen-small__price">48 700 ₽</p>
+                <p class="kitchen-small__old-price">48 700 ₽</p>
+            </div>
+
+        </div>
+
+    </div>
+</li>
+            <li class="kitchen-small">
+    <div class="kitchen-small__slider-wrapper swiper-container kitchen-small__slider_js">
+        <ul class="kitchen-small__slider swiper-wrapper">
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="kitchen-small__discount">-70%</div>
+    </div>
+    <div class="kitchen-small__data">
+        <div class="kitchen-small__left">
+            <p class="kitchen-small__cat">кухня</p>
+            <div class="kitchen-small__line">
+                <a href="#" class="kitchen-small__title">Арриба</a>
+                <button class="kitchen-small__btn popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                    <svg class="kitchen-small__arrow">
+                        <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="kitchen-small__cost">
+                <p class="kitchen-small__price">54 650 ₽</p>
+                <p class="kitchen-small__old-price">54 650 ₽</p>
+            </div>
+
+        </div>
+
+    </div>
+</li>
+
+            <li class="kitchen-big kitchen-big_text-right">
+    <div class="kitchen-big__slider-wrapper swiper-container kitchen-big__slider_js">
+        <ul class="kitchen-big__slider swiper-wrapper">
+            <li class="kitchen-big__slider-item swiper-slide">
+                <a href="" class="kitchen-big__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-big__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-big__slider-item swiper-slide">
+                <a href="" class="kitchen-big__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-big__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-big__slider-item swiper-slide">
+                <a href="" class="kitchen-big__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-big__slider-img">
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="kitchen-big__discount">-70%</div>
+    </div>
+    <div class="kitchen-big__data">
+        <div class="kitchen-big__left">
+            <p class="kitchen-big__cat">кухня</p>
+            <div class="kitchen-big__line">
+                <a href="#" class="kitchen-big__title">Арриба</a>
+                <button class="kitchen-big__btn-mob popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                    <svg class="kitchen-big__arrow">
+                        <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                    </svg>
+                </button>
+            </div>
+            <ul class="kitchen-big__info-list">
+                <li class="kitchen-big__info-item">
+                    <p class="kitchen-big__info-hedaer">Планировка</p>
+                    <p class="kitchen-big__info-text">Угловая</p>
+                </li>
+                <li class="kitchen-big__info-item">
+                    <p class="kitchen-big__info-hedaer">Стиль</p>
+                    <p class="kitchen-big__info-text">Минимализм</p>
+                </li>
+                <li class="kitchen-big__info-item">
+                    <p class="kitchen-big__info-hedaer">Фасад</p>
+                    <p class="kitchen-big__info-text">МДФ</p>
+                </li>
+            </ul>
+            <div class="kitchen-big__cost">
+                <p class="kitchen-big__price">54 650 ₽</p>
+                <p class="kitchen-big__old-price">54 650 ₽</p>
+            </div>
+            <button class="kitchen-big__btn-desc popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                <svg class="kitchen-big__arrow">
+                    <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                </svg>
+            </button>
+            <div class="kitchen-big__more">
+                <p class="kitchen-big__more-hedaer">А ещё ко всем кухням мы предлагаем:</p>
+                <div class="kitchen-big__more-content">
+                    <div class="kitchen-big__more-bg kitchen-big__more-bg_second">
+                        <svg viewBox="0 0 369 169" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24.9994 88.0001C10.9994 50.0001 136.999 -31.9999 306.999 20.0001C476.999 72.0001 241 202 82.9996 156C-75.0004 110 44.3166 20.0001 70.9996 20.0001" stroke="#FECF28" stroke-width="5" stroke-linecap="square"
+                                class="kitchen-big__svg-anim svg-anim" />
+                        </svg>
+                    </div>
+                    <p class="kitchen-big__more-title">Быструю доставку</p>
+                    <p class="kitchen-big__more-text">До двери и в удобное вам<br> время</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</li>
+
+            <li class="kitchen-small">
+    <div class="kitchen-small__slider-wrapper swiper-container kitchen-small__slider_js">
+        <ul class="kitchen-small__slider swiper-wrapper">
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="kitchen-small__discount">-70%</div>
+    </div>
+    <div class="kitchen-small__data">
+        <div class="kitchen-small__left">
+            <p class="kitchen-small__cat">кухня</p>
+            <div class="kitchen-small__line">
+                <a href="#" class="kitchen-small__title">Ферроль</a>
+                <button class="kitchen-small__btn popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                    <svg class="kitchen-small__arrow">
+                        <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="kitchen-small__cost">
+                <p class="kitchen-small__price">48 700 ₽</p>
+                <p class="kitchen-small__old-price">48 700 ₽</p>
+            </div>
+
+        </div>
+
+    </div>
+</li>
+            <li class="kitchen-small">
+    <div class="kitchen-small__slider-wrapper swiper-container kitchen-small__slider_js">
+        <ul class="kitchen-small__slider swiper-wrapper">
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-small__slider-item swiper-slide">
+                <a href="" class="kitchen-small__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="kitchen-small__discount">-70%</div>
+    </div>
+    <div class="kitchen-small__data">
+        <div class="kitchen-small__left">
+            <p class="kitchen-small__cat">кухня</p>
+            <div class="kitchen-small__line">
+                <a href="#" class="kitchen-small__title">Арриба</a>
+                <button class="kitchen-small__btn popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                    <svg class="kitchen-small__arrow">
+                        <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="kitchen-small__cost">
+                <p class="kitchen-small__price">54 650 ₽</p>
+                <p class="kitchen-small__old-price">54 650 ₽</p>
+            </div>
+
+        </div>
+
+    </div>
+</li>
+
+            <li class="kitchen-big kitchen-big_text-left">
+    <div class="kitchen-big__slider-wrapper swiper-container kitchen-big__slider_js">
+        <ul class="kitchen-big__slider swiper-wrapper">
+            <li class="kitchen-big__slider-item swiper-slide">
+                <a href="" class="kitchen-big__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-big__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-big__slider-item swiper-slide">
+                <a href="" class="kitchen-big__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-big__slider-img">
+                </a>
+            </li>
+            <li class="kitchen-big__slider-item swiper-slide">
+                <a href="" class="kitchen-big__slider-link">
+                    <img src="/img/kitchens/kit (2).jpg" alt="" class="kitchen-big__slider-img">
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="kitchen-big__discount">-70%</div>
+    </div>
+    <div class="kitchen-big__data">
+        <div class="kitchen-big__left">
+            <p class="kitchen-big__cat">кухня</p>
+            <div class="kitchen-big__line">
+                <a href="#" class="kitchen-big__title">Арриба</a>
+                <button class="kitchen-big__btn-mob popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                    <svg class="kitchen-big__arrow">
+                        <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                    </svg>
+                </button>
+            </div>
+            <ul class="kitchen-big__info-list">
+                <li class="kitchen-big__info-item">
+                    <p class="kitchen-big__info-hedaer">Планировка</p>
+                    <p class="kitchen-big__info-text">Угловая</p>
+                </li>
+                <li class="kitchen-big__info-item">
+                    <p class="kitchen-big__info-hedaer">Стиль</p>
+                    <p class="kitchen-big__info-text">Минимализм</p>
+                </li>
+                <li class="kitchen-big__info-item">
+                    <p class="kitchen-big__info-hedaer">Фасад</p>
+                    <p class="kitchen-big__info-text">МДФ</p>
+                </li>
+            </ul>
+            <div class="kitchen-big__cost">
+                <p class="kitchen-big__price">54 650 ₽</p>
+                <p class="kitchen-big__old-price">54 650 ₽</p>
+            </div>
+            <button class="kitchen-big__btn-desc popup-open" data-target="calculation"><span>Заказать расчёт</span>
+                <svg class="kitchen-big__arrow">
+                    <use xlink:href="/img/sprite/sprite.svg#arr-blue"></use>
+                </svg>
+            </button>
+            <div class="kitchen-big__more">
+                <p class="kitchen-big__more-hedaer">А ещё ко всем кухням мы предлагаем:</p>
+                <div class="kitchen-big__more-content">
+                    <div class="kitchen-big__more-bg kitchen-big__more-bg_third">
+                        <svg viewBox="0 0 353 161" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.99967 92.9992C-7.00035 5.99949 89.2972 -16.6255 221.394 20.2376C353.49 57.1007 432.723 163.807  213.196 158.144C-9.08052 152.41 -5.00046 62.9997 8.49826 39.9997" stroke="#FECF28" stroke-width="5" stroke-linecap="square"
+                                class="kitchen-big__svg-anim svg-anim" />
+                        </svg>
+                    </div>
+                    <p class="kitchen-big__more-title">250+</p>
+                    <p class="kitchen-big__more-text">вариаций цветов и фактур для создания<br> уникального дизайна</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</li>
+
+        </ul>
+        <div class="pagination @@addClass">
+    <ul class="pagination__list">
+        <li class="pagination__prev">
+            <a href="#" class="pagination__prev-link">
+                <svg class="pagination__prev-img">
+                    <use xlink:href="/img/sprite/sprite.svg#pag-prev"></use>
+                </svg>
+            </a>
+        </li>
+        <li class="pagination__item">
+            <a href="#" class="pagination__link active">1</a>
+        </li>
+        <li class="pagination__item">
+            <a href="#" class="pagination__link">2</a>
+        </li>
+        <li class="pagination__item">
+            <a href="#" class="pagination__link">3</a>
+        </li>
+        <li class="pagination__item">
+            <a href="#" class="pagination__link">4</a>
+        </li>
+        <li class="pagination__item">
+            <a href="#" class="pagination__link">5</a>
+        </li>
+        <li class="pagination__item">
+            <a href="#" class="pagination__link">6</a>
+        </li>
+        <li class="pagination__item">
+            <a href="#" class="pagination__link">7</a>
+        </li>
+        <li class="pagination__item">
+            <a href="#" class="pagination__link">8</a>
+        </li>
+        <li class="pagination__item">
+            <a href="#" class="pagination__link">9</a>
+        </li>
+        <li class="pagination__next">
+            <a href="#" class="pagination__next-link">
+                <svg class="pagination__next-img">
+                    <use xlink:href="/img/sprite/sprite.svg#pag-prev"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+    <button class="pagination__show-more" type="button">
+        <svg class="pagination__show-more-icon">
+            <use xlink:href="/img/sprite/sprite.svg#pag-more"></use>
+        </svg>
+        <span class="pagination__show-more-text">Показать больше</span>
+    </button>
+</div>
+    </div>
+</section>
+    <section class="project-form">
+    <div class="container project-form__container">
+        <h3 class="project-form__hedaer">Уже есть дизайн-проект?</h3>
+        <p class="project-form__text">Пришлите его нам и мы предложим цену ниже</p>
+        <div class="project-form__content">
+            <ul class="project-form__list">
+                <li class="project-form__list-item">
+                    <p class="project-form__num">0 ₽</p>
+                    <p class="project-form__value">стоимость<br> расчёта проекта</p>
+                </li>
+                <li class="project-form__list-item">
+                    <p class="project-form__num">3 </p>
+                    <p class="project-form__value">варианта расчёта<br> предложат менеджеры</p>
+                </li>
+            </ul>
+            <form class="project-form__form">
+                <div class="project-form__row">
+                    <div class="project-form__field field">
+                        <label for="" class="project-form__label input-label">Имя</label>
+                        <input type="text" class="project-form__input input error" placeholder="Анатолий Игнатьевич"
+                            name="name">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                    <div class="project-form__field  field">
+                        <label for="" class="project-form__label input-label">Телефон</label>
+                        <input type="tel" class="project-form__input  input" placeholder="+7 (999) 999 99 99"
+                            name="phone">
+                    </div>
+                </div>
+                <div class="project-form__field  field">
+                    <label for="" class="project-form__label input-label">Комментарий</label>
+                    <textarea name="text" class="project-form__textarea textarea"
+                        placeholder="Укажите примерную длину гарнитура по стенам. Например, кухня прямая 3,5 м или кухня угловая 1,5 м+1,8 м"
+                        name="text"></textarea>
+                </div>
+                <div class="project-form__bottom">
+                    <div class="project-form__file-attach">
+                        <svg class="project-form__file-icon">
+                            <use xlink:href="/img/sprite/sprite.svg#file-pr"></use>
+                        </svg>
+                        <div class="project-form__file-content">
+                            <span class="project-form__file-text">Вы можете </span>
+                            <label for="project-form__file" class="project-form__file-label"> приложить эскиз или
+                                фото</label>
+                            <input type="file" name="" class="project-form__file" id="project-form__file">
+                        </div>
+                    </div>
+                    <button class="project-form__btn btn btn_yellow">Отправить</button>
+                </div>
+                <div class="project-form__policy">
+                    <p class="project-form__policy-text">Нажимая кнопку “Отправить”, вы соглашаетесь с условиями <a
+                            href="#" class="project-form__policy-link">Политики конфиденциальности</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+    <section class="video-reviews container">
+    <div class="video-reviews__header">
+       <h2 class="video-reviews__title">О нас <br> говорят клиенты</h2>
+       <div class="video-reviews__controls">
+          <button class="video-reviews__button video-reviews__button_previous">
+             <svg class="video-reviews__arrow" viewBox="0 0 19 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.86 15.1875L0.453749 8.78125L0.453749 6.9875L6.86 0.581249L8.67938 2.375L4.47688 6.60312L18.75 6.60312L18.75 9.16563L4.47688 9.16562L8.705 13.3937L6.86 15.1875Z"></path>
+             </svg>
+          </button>          
+          <div class="video-reviews__pagination"></div>
+          <button class="video-reviews__button video-reviews__button_next">
+             <svg class="video-reviews__arrow" viewBox="0 0 19 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.14 0.8125L18.5463 7.21875V9.0125L12.14 15.4187L10.3206 13.625L14.5231 9.39688H0.25V6.83437H14.5231L10.295 2.60625L12.14 0.8125Z"></path>
+             </svg>
+          </button>
+       </div>
+    </div>
+    <div class="video-reviews__container swiper-container">
+        <div class="swiper-wrapper">
+            <div class="video-reviews__item swiper-slide">
+                <div class="video-reviews__block video-reviews__block_hover">
+                    <div class="video-reviews__progress-bar">
+                        <span class="video-reviews__progress"></span>
+                    </div>
+                    <video class="video-reviews__video lazy-video" autoplay preload="" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                        <source data-src="../../img/video(test)/10.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-reviews__preloader preloader">
+                        <span class="preloader__item"></span>
+                    </div>
+                    <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
+                        <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
+                        </svg>
+                        <svg class="video-reviews__stop" viewBox="0 0 17 19" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.34375 0.21875C4.16426 0.21875 4.95117 0.544698 5.53136 1.12489C6.11155 1.70508 6.4375 2.49199 6.4375 3.3125V15.6875C6.4375 16.508 6.11155 17.2949 5.53136 17.8751C4.95117 18.4553 4.16426 18.7812 3.34375 18.7812C2.52324 18.7812 1.73633 18.4553 1.15614 17.8751C0.575947 17.2949 0.25 16.508 0.25 15.6875V3.3125C0.25 2.49199 0.575947 1.70508 1.15614 1.12489C1.73633 0.544698 2.52324 0.21875 3.34375 0.21875ZM13.6562 0.21875C14.4768 0.21875 15.2637 0.544698 15.8439 1.12489C16.4241 1.70508 16.75 2.49199 16.75 3.3125V15.6875C16.75 16.508 16.4241 17.2949 15.8439 17.8751C15.2637 18.4553 14.4768 18.7812 13.6562 18.7812C12.8357 18.7812 12.0488 18.4553 11.4686 17.8751C10.8884 17.2949 10.5625 16.508 10.5625 15.6875V3.3125C10.5625 2.49199 10.8884 1.70508 11.4686 1.12489C12.0488 0.544698 12.8357 0.21875 13.6562 0.21875Z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="video-reviews__item swiper-slide">
+                <div class="video-reviews__block video-reviews__block_hover">
+                <div class="video-reviews__progress-bar">
+                    <span class="video-reviews__progress"></span>
+                </div>
+                <video class="video-reviews__video lazy-video" autoplay preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                    <source data-src="../../img/video(test)/2.mp4" type="video/mp4">
+                </video>
+                <div class="video-reviews__preloader preloader">
+                    <span class="preloader__item"></span>
+                </div>
+                <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
+                    <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
+                    </svg>
+                    <svg class="video-reviews__stop" viewBox="0 0 17 19" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.34375 0.21875C4.16426 0.21875 4.95117 0.544698 5.53136 1.12489C6.11155 1.70508 6.4375 2.49199 6.4375 3.3125V15.6875C6.4375 16.508 6.11155 17.2949 5.53136 17.8751C4.95117 18.4553 4.16426 18.7812 3.34375 18.7812C2.52324 18.7812 1.73633 18.4553 1.15614 17.8751C0.575947 17.2949 0.25 16.508 0.25 15.6875V3.3125C0.25 2.49199 0.575947 1.70508 1.15614 1.12489C1.73633 0.544698 2.52324 0.21875 3.34375 0.21875ZM13.6562 0.21875C14.4768 0.21875 15.2637 0.544698 15.8439 1.12489C16.4241 1.70508 16.75 2.49199 16.75 3.3125V15.6875C16.75 16.508 16.4241 17.2949 15.8439 17.8751C15.2637 18.4553 14.4768 18.7812 13.6562 18.7812C12.8357 18.7812 12.0488 18.4553 11.4686 17.8751C10.8884 17.2949 10.5625 16.508 10.5625 15.6875V3.3125C10.5625 2.49199 10.8884 1.70508 11.4686 1.12489C12.0488 0.544698 12.8357 0.21875 13.6562 0.21875Z"></path>
+                    </svg>
+                </button>
+                </div>
+            </div>
+
+            <div class="video-reviews__item swiper-slide">
+                <div class="video-reviews__block video-reviews__block_hover">
+                <div class="video-reviews__progress-bar">
+                    <span class="video-reviews__progress"></span>
+                </div>
+                <video class="video-reviews__video lazy-video" autoplay preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                    <source data-src="../../img/video(test)/3.mp4" type="video/mp4">
+                </video>
+                <div class="video-reviews__preloader preloader">
+                    <span class="preloader__item"></span>
+                </div>
+                <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
+                    <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
+                    </svg>
+                    <svg class="video-reviews__stop" viewBox="0 0 17 19" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.34375 0.21875C4.16426 0.21875 4.95117 0.544698 5.53136 1.12489C6.11155 1.70508 6.4375 2.49199 6.4375 3.3125V15.6875C6.4375 16.508 6.11155 17.2949 5.53136 17.8751C4.95117 18.4553 4.16426 18.7812 3.34375 18.7812C2.52324 18.7812 1.73633 18.4553 1.15614 17.8751C0.575947 17.2949 0.25 16.508 0.25 15.6875V3.3125C0.25 2.49199 0.575947 1.70508 1.15614 1.12489C1.73633 0.544698 2.52324 0.21875 3.34375 0.21875ZM13.6562 0.21875C14.4768 0.21875 15.2637 0.544698 15.8439 1.12489C16.4241 1.70508 16.75 2.49199 16.75 3.3125V15.6875C16.75 16.508 16.4241 17.2949 15.8439 17.8751C15.2637 18.4553 14.4768 18.7812 13.6562 18.7812C12.8357 18.7812 12.0488 18.4553 11.4686 17.8751C10.8884 17.2949 10.5625 16.508 10.5625 15.6875V3.3125C10.5625 2.49199 10.8884 1.70508 11.4686 1.12489C12.0488 0.544698 12.8357 0.21875 13.6562 0.21875Z"></path>
+                    </svg>
+                </button>
+                </div>
+            </div>
+
+            <div class="video-reviews__item swiper-slide">
+                <div class="video-reviews__block video-reviews__block_hover">
+                <div class="video-reviews__progress-bar">
+                    <span class="video-reviews__progress"></span>
+                </div>
+                <video class="video-reviews__video lazy-video" autoplay preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                    <source data-src="../../img/video(test)/4.mp4" type="video/mp4">
+                </video>
+                <div class="video-reviews__preloader preloader">
+                    <span class="preloader__item"></span>
+                </div>
+                <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
+                    <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
+                    </svg>
+                    <svg class="video-reviews__stop" viewBox="0 0 17 19" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.34375 0.21875C4.16426 0.21875 4.95117 0.544698 5.53136 1.12489C6.11155 1.70508 6.4375 2.49199 6.4375 3.3125V15.6875C6.4375 16.508 6.11155 17.2949 5.53136 17.8751C4.95117 18.4553 4.16426 18.7812 3.34375 18.7812C2.52324 18.7812 1.73633 18.4553 1.15614 17.8751C0.575947 17.2949 0.25 16.508 0.25 15.6875V3.3125C0.25 2.49199 0.575947 1.70508 1.15614 1.12489C1.73633 0.544698 2.52324 0.21875 3.34375 0.21875ZM13.6562 0.21875C14.4768 0.21875 15.2637 0.544698 15.8439 1.12489C16.4241 1.70508 16.75 2.49199 16.75 3.3125V15.6875C16.75 16.508 16.4241 17.2949 15.8439 17.8751C15.2637 18.4553 14.4768 18.7812 13.6562 18.7812C12.8357 18.7812 12.0488 18.4553 11.4686 17.8751C10.8884 17.2949 10.5625 16.508 10.5625 15.6875V3.3125C10.5625 2.49199 10.8884 1.70508 11.4686 1.12489C12.0488 0.544698 12.8357 0.21875 13.6562 0.21875Z"></path>
+                    </svg>
+                </button>
+                </div>
+            </div>
+
+            <div class="video-reviews__item swiper-slide">
+                <div class="video-reviews__block video-reviews__block_hover">
+                <div class="video-reviews__progress-bar">
+                    <span class="video-reviews__progress"></span>
+                </div>
+                <video class="video-reviews__video lazy-video" autoplay preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                    <source data-src="../../img/video(test)/5.mp4" type="video/mp4">
+                </video>
+                <div class="video-reviews__preloader preloader">
+                    <span class="preloader__item"></span>
+                </div>
+                <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
+                    <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
+                    </svg>
+                    <svg class="video-reviews__stop" viewBox="0 0 17 19" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.34375 0.21875C4.16426 0.21875 4.95117 0.544698 5.53136 1.12489C6.11155 1.70508 6.4375 2.49199 6.4375 3.3125V15.6875C6.4375 16.508 6.11155 17.2949 5.53136 17.8751C4.95117 18.4553 4.16426 18.7812 3.34375 18.7812C2.52324 18.7812 1.73633 18.4553 1.15614 17.8751C0.575947 17.2949 0.25 16.508 0.25 15.6875V3.3125C0.25 2.49199 0.575947 1.70508 1.15614 1.12489C1.73633 0.544698 2.52324 0.21875 3.34375 0.21875ZM13.6562 0.21875C14.4768 0.21875 15.2637 0.544698 15.8439 1.12489C16.4241 1.70508 16.75 2.49199 16.75 3.3125V15.6875C16.75 16.508 16.4241 17.2949 15.8439 17.8751C15.2637 18.4553 14.4768 18.7812 13.6562 18.7812C12.8357 18.7812 12.0488 18.4553 11.4686 17.8751C10.8884 17.2949 10.5625 16.508 10.5625 15.6875V3.3125C10.5625 2.49199 10.8884 1.70508 11.4686 1.12489C12.0488 0.544698 12.8357 0.21875 13.6562 0.21875Z"></path>
+                    </svg>
+                </button>
+                </div>
+            </div>
+
+            <div class="video-reviews__item swiper-slide">
+                <div class="video-reviews__block video-reviews__block_hover">
+                <div class="video-reviews__progress-bar">
+                    <span class="video-reviews__progress"></span>
+                </div>
+                <video class="video-reviews__video lazy-video" autoplay preload="none" controlslist="nodownload" disablepictureinpicture muted loop playsinline>
+                    <source data-src="../../img/video(test)/6.mp4" type="video/mp4">
+                </video>
+                <div class="video-reviews__preloader preloader">
+                    <span class="preloader__item"></span>
+                </div>
+                <button class="video-reviews__button video-reviews__buttons_play-stop" tabindex="0">
+                    <svg class="video-reviews__play" viewBox="0 0 14 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.2625 6.70935L2.2625 0.206225C1.36875 -0.3219 0 0.1906 0 1.49685V14.5C0 15.6719 1.27188 16.3781 2.2625 15.7906L13.2625 9.2906C14.2437 8.71247 14.2469 7.28747 13.2625 6.70935Z"></path>
+                    </svg>
+                    <svg class="video-reviews__stop" viewBox="0 0 17 19" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.34375 0.21875C4.16426 0.21875 4.95117 0.544698 5.53136 1.12489C6.11155 1.70508 6.4375 2.49199 6.4375 3.3125V15.6875C6.4375 16.508 6.11155 17.2949 5.53136 17.8751C4.95117 18.4553 4.16426 18.7812 3.34375 18.7812C2.52324 18.7812 1.73633 18.4553 1.15614 17.8751C0.575947 17.2949 0.25 16.508 0.25 15.6875V3.3125C0.25 2.49199 0.575947 1.70508 1.15614 1.12489C1.73633 0.544698 2.52324 0.21875 3.34375 0.21875ZM13.6562 0.21875C14.4768 0.21875 15.2637 0.544698 15.8439 1.12489C16.4241 1.70508 16.75 2.49199 16.75 3.3125V15.6875C16.75 16.508 16.4241 17.2949 15.8439 17.8751C15.2637 18.4553 14.4768 18.7812 13.6562 18.7812C12.8357 18.7812 12.0488 18.4553 11.4686 17.8751C10.8884 17.2949 10.5625 16.508 10.5625 15.6875V3.3125C10.5625 2.49199 10.8884 1.70508 11.4686 1.12489C12.0488 0.544698 12.8357 0.21875 13.6562 0.21875Z"></path>
+                    </svg>
+                </button>
+                </div>
+            </div>
+        </div>
+     </div>
+</section>
+
+    <section class="advantages">
+    <div class="advantages__container container">
+        <div class="advantages__items">
+            <div class="advantages__item">
+                <svg class="advantages__icon">
+                    <use xlink:href="/img/sprite/sprite.svg#delivery"></use>
+                </svg>
+                <div class="advantages__description">
+                    <h4 class="advantages__title">Доставка и монтаж</h4>
+                    <p class="advantages__text">Мы привезём и соберём мебель в удобное вам время</p>
+                </div>
+            </div>
+            <div class="advantages__item">
+                <svg class="advantages__icon">
+                    <use xlink:href="/img/sprite/sprite.svg#suitcase"></use>
+                </svg>
+                <div class="advantages__description">
+                    <h4 class="advantages__title">Безопасная оплата</h4>
+                    <p class="advantages__text">Наличными, по карте или <a class="advantages__link" href="">прямо с сайта</a></p>
+                </div>
+            </div>
+            <div class="advantages__item">
+                <svg class="advantages__icon">
+                    <use xlink:href="/img/sprite/sprite.svg#medal"></use>
+                </svg>
+                <div class="advantages__description">
+                    <h4 class="advantages__title">Гарантия 2 года</h4>
+                    <p class="advantages__text">Мы уверены, что наша мебель прослужит долго</p>
+                </div>
+            </div>
+            <div class="advantages__item">
+                <svg class="advantages__icon">
+                    <use xlink:href="/img/sprite/sprite.svg#leaf"></use>
+                </svg>
+                <div class="advantages__description">
+                    <h4 class="advantages__title">Экологичные материалы</h4>
+                    <p class="advantages__text">Класс эмиссии Е1 позволяет использовать их даже в мед. учереждениях</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+<section class="footer">
+    <div class="container footer__container">
+        <div class="footer__top">
+            <ul class="footer__menu">
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Кухни</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Шкафы</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Техника</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Мойки</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Материалы</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Процесс работы</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Отзывы</a>
+                </li>
+                <li class="footer__menu-item">
+                    <a href="#" class="footer__menu-link">Контакты</a>
+                </li>
+            </ul>
+            <div class="footer__info">
+                <a href="/" class="footer__logo-link">
+                    <img src="/img/icons/HK-logo.svg" alt="logo" class="footer__logo">
+                </a>
+                <p class="footer__phone-text">Один телефон для любых вопросов</p>
+                <a href="+78126777585" class="footer__phone-link">+7 (812) 677-75-85</a>
+                <a href="#" class="footer__pay-btn btn btn_white">Оплата онлайн</a>
+            </div>
+            <div class="footer__buttons">
+                <p class="footer__buttons-text">Вызов дизайнера и дизайн-проект бесплатно!</p>
+                <button class="footer__btn-designer btn btn_yellow" type="button">Консультация дизайнера</button>
+                <button class="footer__btn-callback btn btn_white" type="button">Обратный звонок</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="container footer__bottom-container">
+            <ul class="footer__social">
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link">
+                        <svg class="footer__social-icon">
+                            <use xlink:href="/img/sprite/sprite.svg#vk-fill"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link">
+                        <svg class="footer__social-icon">
+                            <use xlink:href="/img/sprite/sprite.svg#instagram-fill"></use>
+                        </svg>
+                    </a>
+                </li>
+
+            </ul>
+            <a href="#" class="footer__policy">Политика конфиденциальности</a>
+            <div class="footer__cards">
+                <svg class="footer__social-icon">
+                    <use xlink:href="/img/sprite/sprite.svg#mir-logo"></use>
+                </svg>
+                <svg class="footer__social-icon">
+                    <use xlink:href="/img/sprite/sprite.svg#mc-logo"></use>
+                </svg>
+                <svg class="footer__social-icon">
+                    <use xlink:href="/img/sprite/sprite.svg#visa-logo"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--consult-->
+
+<div class="popup__wrapper" data-target="consult">
+    <div class="popup consult__popup popup-js">
+        <button class="popup__close close-js">
+            <svg class="popup__close-icon">
+                <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
+            </svg>
+        </button>
+        <div class="popup__content">
+
+            <img src="/img/icons/consult-popup.svg" alt="" class="popup__img consult__img">
+            <h3 class="popup__header consult__header">Консультация дизайнера</h3>
+            <p class="popup__text consult__text">Дизайнер приедет в удобное вам время с 9:00 до 22:00, выслушает все
+                ваши пожелания, осуществит замер и будет вести ваш проект.<br><br><b> Вызов дизайнера и дизайн проект -
+                    бесплатно</b></p>
+            <form action="" class="popup__form" data-type="consult">
+                <div class="popup__fields-wrapper consult__fields-wrapper">
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Имя</label>
+                        <input type="text" class="popup__form__input input error" placeholder="Анатолий Игнатьевич"
+                            name="name">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Телефон</label>
+                        <input type="tel" class="popup__form__input input" placeholder="+7 (999) 999 99 99"
+                            name="phone">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Адрес и удобное время замера</label>
+                        <textarea name="text" class="popup__textarea textarea consult__textarea"
+                            placeholder="Ваши комментарии"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="popup__btn btn btn_yellow">Пригласить дизайнера</button>
+                <p class="popup__policy">Нажимая кнопку “Пригласить дизайнера”, вы соглашаетесь с <a href="#"
+                        class="popup__policy-link"> Политикой
+                        конфиденциальности</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--callback-->
+<div class="popup__wrapper" data-target="callback">
+    <div class="popup callback__popup popup-js">
+        <button class="popup__close close-js">
+            <svg class="popup__close-icon">
+                <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
+            </svg>
+        </button>
+        <div class="popup__content">
+
+            <img src="/img/icons/callback-popup.svg" alt="" class="popup__img callback__img">
+            <h3 class="popup__header callback__header">Обратный звонок</h3>
+
+            <form action="" class="popup__form" data-type="callback">
+                <div class="popup__fields-wrapper callback__fields-wrapper">
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Имя</label>
+                        <input type="text" class="popup__form__input input error" placeholder="Анатолий Игнатьевич"
+                            name="name">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Телефон</label>
+                        <input type="tel" class="popup__form__input input" placeholder="+7 (999) 999 99 99"
+                            name="phone">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                </div>
+                <button type="submit" class="popup__btn btn btn_yellow">Пригласить дизайнера</button>
+                <p class="popup__policy">Нажимая кнопку “Отправить”, вы соглашаетесь с <a href="#"
+                        class="popup__policy-link"> Политикой
+                        конфиденциальности</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+<!--calculation-->
+
+
+<div class="popup__wrapper" data-target="calculation">
+    <div class="popup calculation__popup popup-js">
+        <button class="popup__close close-js">
+            <svg class="popup__close-icon">
+                <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
+            </svg>
+        </button>
+        <div class="popup__content">
+
+            <img src="/img/icons/calculatiun-popup.svg" alt="" class="popup__img calculation__img">
+            <h3 class="popup__header calculation__header">Расчёт проекта</h3>
+
+            <form action="" class="popup__form" data-type="calculation">
+                <div class="popup__fields-wrapper calculation__fields-wrapper">
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Имя</label>
+                        <input type="text" class="popup__form__input input error" placeholder="Анатолий Игнатьевич"
+                            name="name">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Телефон</label>
+                        <input type="tel" class="popup__form__input input" placeholder="+7 (999) 999 99 99"
+                            name="phone">
+                        <span class="error-text">Заполните это поле!</span>
+                    </div>
+                    <div class="popup__form-field field">
+                        <label for="" class="popup__form__label input-label">Комментарий</label>
+                        <textarea name="text" id="" class="popup__textarea textarea calculation__textarea"
+                            placeholder="Укажите примерную длину гарнитура по стенам. Например, кухня угловая 1,5 м + 1,8 м с барной стойкой"></textarea>
+                    </div>
+                </div>
+                <div class="popup__attach">
+                    <label for="attach-inp" class="popup__attach-label">
+                        <div class="popup__attach-img">
+                            <svg class="popup__attach-icon">
+                                <use xlink:href="/img/sprite/sprite.svg#attach-popup"></use>
+                            </svg>
+
+                        </div>
+                        <span class="attach-text">Приложить эскиз или фото</span>
+                    </label>
+                    <input type="file" name="file" class="popup__attach-input" id="attach-inp">
+                </div>
+                <button type="submit" class="popup__btn btn btn_yellow">Рассчитать стоимость</button>
+                <p class="popup__policy">Нажимая кнопку “Рассчитать стоимость”, вы соглашаетесь с <a href="#"
+                        class="popup__policy-link"> Политикой
+                        конфиденциальности</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- media -->
+<div class="popup__wrapper" data-target="img">
+    <div class="media-wrapper  popup-js">
+        <div class="close-media close-js">
+            <svg class="close-media__icon">
+                <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
+            </svg>
+        </div>
+
+        <div class="media-inner">
+
+        </div>
+    </div>
+</div>
+
+<div class="popup__wrapper" data-target="video">
+    <div class="media-wrapper  popup-js">
+        <div class="close-media close-js">
+            <svg class="close-media__icon">
+                <use xlink:href="/img/sprite/sprite.svg#popup-close-icon"></use>
+            </svg>
+        </div>
+
+        <div class="video-inner">
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

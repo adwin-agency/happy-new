@@ -42,12 +42,11 @@
     }
 }
 
-@media(max-width:1400px){
-
-}
-@media(max-width:960px){
+@media(max-width:1440px){
     .advantages {
         &__items {
+            display: grid;
+            grid-template-columns: auto auto;
             justify-content: space-around;
         }
         &__item {
@@ -64,8 +63,11 @@
 
     }
 }
-@media(max-width:768px){
-}
-@media(max-width:430px){
-
+@media(max-width:768px) {
+    .advantages {
+        &__items {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
 }
