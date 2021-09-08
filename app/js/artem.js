@@ -7,8 +7,9 @@ const initFunctions = () => {
 
 	// closets page ==START==
 	videoPlayerHandler();
-	swiperAdvantages(); //swiper-slider
+	swiperAdvantages();
 	swiperClosetCard();
+	swiperClosetDetail();
 	dotShow();
 	// closets page ==END==
 };
@@ -103,14 +104,57 @@ const swiperAdvantages = () => {
 		}
 	});
 };
+const swiperClosetDetail = () => {
+	const smallSlider = new Swiper('.detail-sm-slider__container', {
+		slidesPerView: 4,
+		slidesPerGroup: 1,
+		direction: 'vertical',
+		freeMode: true,
+        slideToClickedSlide: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+		breakpoints: {
+            280: {
+                direction: 'horizontal',
+				spaceBetween: 10,
+            },
+            1300: {
+                direction: 'vertical',
+				spaceBetween: 20,
+            }
+        }
+	});
 
+	const mainSlider = new Swiper('.closet-detail__main-slider', {
+		slidesPerView: 1,
+		slidesPerGroup: 1,
+		speed: 1000,
+		navigation: {
+			nextEl: ".card-slider__arrow_right",
+			prevEl: ".card-slider__arrow_left",
+		},
+		thumbs: {
+            swiper: smallSlider
+        },
+	});
+
+	const arrowButton = document.querySelector('.detail-sm-slider__button');
+    if (arrowButton) {
+
+        arrowButton.addEventListener('click', () => {
+            if (!mainSlider.isEnd) {
+                mainSlider.slideTo(mainSlider.activeIndex + 1, 1000, false)
+            }
+        });
+    }
+}
 const swiperClosetCard = () => {
-	const swiper = new Swiper('.closet-card__image-container', {
+	const swiperCard = new Swiper('.card-slider', {
 		slidesPerView: 1,
 		slidesPerGroup: 1,
 		navigation: {
-			nextEl: ".closet-card__arrow_right",
-			prevEl: ".closet-card__arrow_left",
+			nextEl: ".card-slider__arrow_right",
+			prevEl: ".card-slider__arrow_left",
 		},
 	});
 };
@@ -345,4 +389,5 @@ const dotShow = () => {
 	}
 }
 // closets-advantages dot show ==END==
+
 document.addEventListener("DOMContentLoaded", initFunctions);
