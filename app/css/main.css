@@ -6895,108 +6895,102 @@ body.hidescroll {
             align-items: center;
     z-index: 3; }
 
-.closet-detail__container {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-auto-rows: minmax(500px, 700px);
-  grid-gap: 120px; }
-  .closet-detail__container.container {
-    width: 1440px; }
-
-.closet-detail__slider-block {
-  display: grid;
-  grid-template-columns: minmax(100px, 128px) minmax(500px, 700px);
-  grid-gap: 90px; }
-
-.closet-detail__small-slider {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-
-.closet-detail__specifications {
-  border-top: 1px solid #c4c4c4;
-  border-bottom: 1px solid #c4c4c4;
-  max-width: 400px;
-  padding: 11px 0;
-  margin-top: 25px; }
-
-.closet-detail__title {
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 28px;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: #000000;
-  margin-top: 6px; }
-
-.closet-detail__name {
-  font-weight: 500;
-  font-size: 70.875px;
-  line-height: 56px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  color: #2e3831;
-  margin-top: 5px; }
-
-.closet-detail__price-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 40px;
-  margin-top: 45px; }
-
-.closet-detail__price-block {
-  padding-right: 10px; }
-
-.closet-detail__price-new {
-  color: #2e3831; }
-
-.closet-detail__price {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 31.5px;
-  line-height: 38px;
-  color: inherit; }
-
-.closet-detail__price-text {
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 28px;
-  color: inherit; }
-
-.closet-detail__price-old {
-  color: #8e8e8e; }
-
-.closet-detail__button {
-  padding: 22px 91px;
-  margin: 15px 0 28px;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #2e3831; }
+.closet-detail {
+  margin-bottom: 88px; }
+  .closet-detail__container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: minmax(500px, 700px);
+    grid-gap: 120px; }
+    .closet-detail__container.container {
+      width: 1440px; }
+  .closet-detail__slider-block {
+    display: grid;
+    grid-template-columns: minmax(100px, 128px) minmax(500px, 700px);
+    grid-gap: 90px; }
+  .closet-detail__small-slider {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .closet-detail__specifications {
+    border-top: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+    max-width: 400px;
+    padding: 11px 0;
+    margin-top: 25px; }
+  .closet-detail__title {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 28px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 6px; }
+  .closet-detail__name {
+    font-weight: 500;
+    font-size: 70.875px;
+    line-height: 56px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    color: #2e3831;
+    margin-top: 5px; }
+  .closet-detail__price-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 40px;
+    margin-top: 45px;
+    white-space: nowrap; }
+  .closet-detail__price-block {
+    padding-right: 10px; }
+  .closet-detail__price-new {
+    color: #2e3831; }
+  .closet-detail__price {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 31.5px;
+    line-height: 38px;
+    color: inherit; }
+  .closet-detail__price-text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 28px;
+    color: inherit; }
+  .closet-detail__price-old {
+    color: #8e8e8e; }
+  .closet-detail__button {
+    padding: 22px 5px;
+    white-space: nowrap;
+    max-width: 320px;
+    width: 100%;
+    margin: 15px 0 28px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #2e3831; }
 
 .detail-sm-slider__container {
   overflow: hidden;
@@ -7022,7 +7016,8 @@ body.hidescroll {
 
 @media (max-width: 1300px) {
   .closet-detail__container {
-    grid-template-columns: auto 45%; }
+    grid-template-columns: auto 45%;
+    grid-gap: 30px; }
   .closet-detail__slider-block {
     grid-template-columns: minmax(300px, 700px);
     grid-gap: 90px; }
@@ -7038,10 +7033,10 @@ body.hidescroll {
         -ms-flex-pack: end;
             justify-content: end;
     align-self: flex-start; }
-  .closet-detail__container {
-    grid-gap: 30px; }
   .closet-detail__slider-block {
     grid-gap: 20px; }
+  .closet-detail__price-container {
+    gap: 10px; }
   .closet-detail__price {
     font-size: 26px; }
   .detail-sm-slider__container {
@@ -7057,6 +7052,17 @@ body.hidescroll {
             transform: rotate(-90deg);
     margin-top: 0;
     margin-left: 20px; } }
+
+@media (max-width: 750px) {
+  .closet-detail__container {
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+    justify-items: center; }
+  .closet-detail__small-slider {
+    display: none; }
+  .closet-detail__description {
+    width: 100%;
+    max-width: 400px; } }
 
 .workflow__container {
   position: relative; }
