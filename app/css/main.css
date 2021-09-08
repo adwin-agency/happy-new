@@ -6841,7 +6841,8 @@ body.hidescroll {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2; }
+    z-index: 2;
+    pointer-events: none; }
   .card-slider__arrow {
     fill: #fff;
     position: absolute;
@@ -6851,7 +6852,8 @@ body.hidescroll {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
     width: 10%;
     top: 0;
-    cursor: pointer; }
+    cursor: pointer;
+    pointer-events: auto; }
     .card-slider__arrow.swiper-button-disabled {
       cursor: auto; }
       .card-slider__arrow.swiper-button-disabled .card-slider__arrow-icon {
