@@ -446,7 +446,8 @@ const horScroll = () => {
 /*kitchen-detail fixed*/
 
 const fixKitchenInfo = () => {
-    let fixedBlock = document.querySelector('.kitchen-detail__fixed-mob');
+    let fixedBlock = document.querySelector('.fixed-js');
+    const fixedBtn = document.querySelector('.fixed-btn-js');
 
     if (window.innerWidth < 961 && window.innerWidth > 800 && fixedBlock) {
         const footer = document.querySelector('.advantages');
@@ -461,17 +462,17 @@ const fixKitchenInfo = () => {
 
         })
     }
-    else if (window.innerWidth <= 800 && fixedBlock) {
-        fixedBlock = document.querySelector('.kitchen-detail__button-fixed-wrapper');
+    else if (window.innerWidth <= 800 && fixedBtn) {
+
         const footer = document.querySelector('.advantages');
         document.addEventListener('scroll', () => {
 
 
             if (footer.getBoundingClientRect().top - window.innerHeight < 0) {
-                fixedBlock.style.bottom = -fixedBlock.offsetHeight + 'px';
+                fixedBtn.style.bottom = -fixedBtn.offsetHeight + 'px';
             }
             else {
-                fixedBlock.style.bottom = '0px';
+                fixedBtn.style.bottom = '0px';
             }
         });
     }
