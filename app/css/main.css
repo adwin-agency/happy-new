@@ -7936,3 +7936,21 @@ body.hidescroll {
       bottom: calc(100% + 77px); }
     .workflow-step5__form {
       padding: 41px 19px 28px; } }
+
+.reviews__container {
+  padding-top: 24px; }
+
+.reviews__header {
+  margin-top: 30px;
+  margin-bottom: 62px;
+  font-weight: 500;
+  font-size: 70.875px;
+  line-height: 56px;
+  color: #2E3831; }
+
+.reviews__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 99px;
+     -moz-column-gap: 99px;
+          column-gap: 99px; }
