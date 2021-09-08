@@ -1,4 +1,5 @@
 .closet-detail {
+  margin-bottom: 88px;
   &__container {
     display: grid;
     grid-template-columns: auto auto;
@@ -51,6 +52,7 @@
     display: flex;
     gap: 40px;
     margin-top: 45px;
+    white-space: nowrap;
   }
 
   &__price-block {
@@ -80,7 +82,10 @@
     color: #8e8e8e;
   }
   &__button {
-    padding: 22px 91px;
+    padding: 22px 5px;
+    white-space: nowrap;
+    max-width: 320px;
+    width: 100%;
     margin: 15px 0 28px;
     font-weight: bold;
     font-size: 14px;
@@ -120,6 +125,7 @@
   .closet-detail {
     &__container {
         grid-template-columns: auto 45%;
+        grid-gap: 30px;
     }
     &__slider-block {
       grid-template-columns: minmax(300px, 700px);
@@ -131,11 +137,11 @@
       justify-content: end;
       align-self: flex-start;
     }
-    &__container {
-      grid-gap: 30px;
-    }
     &__slider-block {
       grid-gap: 20px;
+    }
+    &__price-container {
+      gap: 10px;
     }
     &__price {
       font-size: 26px;
@@ -155,6 +161,22 @@
       transform: rotate(-90deg);
       margin-top: 0;
       margin-left: 20px;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .closet-detail {
+    &__container {
+        grid-template-columns: auto;
+        grid-auto-rows: auto;
+        justify-items: center;
+    }
+    &__small-slider {
+      display: none;
+    }
+    &__description {
+      width: 100%;
+      max-width: 400px;
     }
   }
 }
