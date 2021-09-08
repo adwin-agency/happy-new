@@ -162,7 +162,11 @@ const swiperClosetCard = () => {
 
 // Yandex Cards ==START==
 const map = () => {
-	ymaps.ready(init);
+	const container = document.querySelector('#map');
+
+	if(container) {
+		ymaps.ready(init)
+	}
 
 	function init() {
 		const myMap = new ymaps.Map("map", {

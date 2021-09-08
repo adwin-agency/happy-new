@@ -446,7 +446,7 @@ const horScroll = () => {
 /*kitchen-detail fixed*/
 
 const fixKitchenInfo = () => {
-    let fixedBlock = document.querySelector('.fixed-js');
+    const fixedBlock = document.querySelector('.fixed-js');
     const fixedBtn = document.querySelector('.fixed-btn-js');
 
     if (window.innerWidth < 961 && window.innerWidth > 800 && fixedBlock) {
