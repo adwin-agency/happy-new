@@ -280,7 +280,7 @@ b{
 body.hidescroll{
     overflow: hidden;
 }
-@import "../scss/ilya.scss";
+
 @import "../blocks/UI/elements.scss";
 @import "../blocks/header/header.scss";
 @import "../blocks/footer/footer.scss";
@@ -330,3 +330,4 @@ body.hidescroll{
 
 @import "../blocks/closet-moduls/card-slider/card-slider.scss";
 @import "../blocks/closet-detail/closet-detail.scss";
+@import "../scss/ilya.scss";
