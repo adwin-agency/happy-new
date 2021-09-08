@@ -288,6 +288,28 @@ const catalogSlider = () => {
             }
         }
     });
+
+    const swiperDelivery = new Swiper('.workflow-step4__slider-js', {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: '.workflow-step4__slider-next',
+        },
+        breakpoints: {
+            320: {
+                spaceBetween: 8,
+
+            },
+            769: {
+                spaceBetween: 35,
+
+            },
+            1441: {
+                spaceBetween: 18,
+            }
+        }
+    });
 }
 
 
