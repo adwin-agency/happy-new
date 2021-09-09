@@ -1,5 +1,5 @@
 .closet-detail {
-  margin-bottom: 88px;
+  margin-bottom: 170px;
   &__container {
     display: grid;
     grid-template-columns: auto auto;
@@ -86,7 +86,7 @@
     white-space: nowrap;
     max-width: 320px;
     width: 100%;
-    margin: 15px 0 28px;
+    margin: 15px 0 62px;
     font-weight: bold;
     font-size: 14px;
     line-height: 17px;
@@ -123,6 +123,7 @@
 
 @media (max-width: 1300px) {
   .closet-detail {
+    margin-bottom: 112px;
     &__container {
         grid-template-columns: auto 45%;
         grid-gap: 30px;
@@ -145,6 +146,9 @@
     }
     &__price {
       font-size: 26px;
+    }
+    &__button {
+      margin: 15px 0 28px;
     }
   }
   .detail-sm-slider {
@@ -187,6 +191,7 @@
 }
 @media (max-width: 750px) {
   .closet-detail {
+    margin-bottom: 88px;
     &__container {
         grid-template-columns: auto;
         grid-auto-rows: auto;
