@@ -310,6 +310,15 @@ const catalogSlider = () => {
             }
         }
     });
+
+    const swiperRewiews = new Swiper('.reviews__slider-js', {
+        spaceBetween: 10,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 }
 
 

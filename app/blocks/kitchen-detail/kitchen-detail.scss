@@ -15,6 +15,28 @@
     &__slider{
         max-width: 100%;
         height: 629px;
+        position: relative;
+        &:before{
+            content:"";
+            top:0px;
+            left: 0px;
+            height: 100%;
+            width: 80px;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+            position: absolute;
+            z-index: 2;
+        }
+        &:after{
+            content:"";
+            top:0px;
+            right: 0px;
+            height: 100%;
+            width: 80px;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+            transform: rotate(180deg);
+            position: absolute;
+            z-index: 2;
+        }
     }
     .swiper-button-prev, .swiper-button-next{
         color:white;
