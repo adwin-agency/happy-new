@@ -330,6 +330,7 @@ const popupOpen = (type) => {
 
     document.body.addEventListener('click', (e) => {
         if (e.target.closest('.popup-open')) {
+            console.log('popup')
             const popup = e.target.closest('.popup-open').getAttribute('data-target');
 
             if (popup == 'img') {
@@ -541,4 +542,9 @@ document.addEventListener('DOMContentLoaded', () => {
     fixKitchenInfo();
     productionAnimate();
     svgAnimate();
+
+    document.querySelector('.closet-image').addEventListener('click', () => {
+        console.log('click');
+    })
+
 });
