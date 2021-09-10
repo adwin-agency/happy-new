@@ -240,9 +240,9 @@
       padding-left: 10px; } }
 
 .workflow-banner {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.9)), color-stop(90.94%, rgba(255, 255, 255, 0.27))), url(/img/workflow-banner.png);
-  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.27) 90.94%), url(/img/workflow-banner.png);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.27) 90.94%), url(/img/workflow-banner.png);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.9)), color-stop(90.94%, rgba(255, 255, 255, 0.27))), url(../img/workflow-banner.png);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.27) 90.94%), url(../img/workflow-banner.png);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.27) 90.94%), url(../img/workflow-banner.png);
   background-position: left 300px center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -407,9 +407,9 @@
     grid-template-columns: 59px auto; } }
 
 .workflow-step3 {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.45)), to(rgba(0, 0, 0, 0.45))), url(/img/step3-bg.png);
-  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/img/step3-bg.png);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/img/step3-bg.png);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.45)), to(rgba(0, 0, 0, 0.45))), url(../img/step3-bg.png);
+  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../img/step3-bg.png);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../img/step3-bg.png);
   padding-top: 218px;
   padding-bottom: 150px;
   background-size: cover;

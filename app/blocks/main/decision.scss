@@ -1,5 +1,5 @@
 .decision{
-    background-image: url(/img/decision_bg.jpg);
+    background-image: url(../img/decision_bg.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -45,7 +45,7 @@
     }
     &__btn:after{
         content: "";
-        background-image: url(/img/icons/arrow-right.svg);
+        background-image: url(../img/icons/arrow-right.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -106,7 +106,7 @@
 }
 @media(max-width:414px){
     .decision{
-        background-image: url(/img/decision_bg-mob.jpg);
+        background-image: url(../img/decision_bg-mob.jpg);
         padding: 209px 0 49px;
         &__content{
             padding: 0 10px;

@@ -1,12 +1,16 @@
 .scroll-block{
+    
     max-width: 100vw;
     position: relative;
+    display: flex;
+    justify-content: center;
 
 }
 .scroll-content{
     position: sticky;
     overflow: hidden;
     max-width: 100vw;
+
 }
 .scroll-wrapper{
     

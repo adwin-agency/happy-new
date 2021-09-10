@@ -1248,7 +1248,7 @@ body.hidescroll {
             justify-content: flex-end; }
   .main-cat__info:after {
     content: "";
-    background-image: url(/img/icons/arrow-right.svg);
+    background-image: url(../img/icons/arrow-right.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -1413,7 +1413,7 @@ body.hidescroll {
     font-size: 25px; } }
 
 .decision {
-  background-image: url(/img/decision_bg.jpg);
+  background-image: url(../img/decision_bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1452,7 +1452,7 @@ body.hidescroll {
     margin: 0 auto; }
   .decision__btn:after {
     content: "";
-    background-image: url(/img/icons/arrow-right.svg);
+    background-image: url(../img/icons/arrow-right.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -1500,7 +1500,7 @@ body.hidescroll {
 
 @media (max-width: 414px) {
   .decision {
-    background-image: url(/img/decision_bg-mob.jpg);
+    background-image: url(../img/decision_bg-mob.jpg);
     padding: 209px 0 49px; }
     .decision__content {
       padding: 0 10px; }
@@ -2169,12 +2169,12 @@ body.hidescroll {
   .call-forms__item {
     padding: 110px 0 185px; }
   .call-forms__item:first-child {
-    background-image: url(/img/call-forbs-bg-1.jpg);
+    background-image: url(../img/call-forbs-bg-1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; }
   .call-forms__item:last-child {
-    background-image: url(/img/call-forbs-bg-2.jpg);
+    background-image: url(../img/call-forbs-bg-2.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; }
@@ -3002,7 +3002,7 @@ body.hidescroll {
     margin-right: 31px; } }
 
 .project-form {
-  background-image: url(/img/proj-form-bg.png);
+  background-image: url(../img/proj-form-bg.png);
   background-repeat: no-repeat;
   background-position: right 70% center;
   background-size: contain;
@@ -3373,7 +3373,7 @@ body.hidescroll {
   transition: opacity .4s;
   min-height: 50px;
   min-width: 50px;
-  background-image: url(/img/icons/preload.svg);
+  background-image: url(../img/icons/preload.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50px 50px;
@@ -4543,7 +4543,7 @@ body.hidescroll {
   .closets-advantages.container {
     padding: 0; }
   .closets-advantages__container {
-    background-image: url(/img/closets/advantages_bg.jpg);
+    background-image: url(../img/closets/advantages_bg.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
@@ -4642,7 +4642,15 @@ body.hidescroll {
 
 .scroll-block {
   max-width: 100vw;
-  position: relative; }
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .scroll-content {
   position: -webkit-sticky;
@@ -5245,7 +5253,7 @@ body.hidescroll {
     font-size: 32px;
     line-height: 42px; } }
 
-@media (max-width: 414px) {
+@media (max-width: 440px) {
   .video-reviews__pagination {
     margin: 0 8px; }
   .video-reviews__container.swiper-container {
@@ -5503,7 +5511,7 @@ body.hidescroll {
       height: 54px;
       background-color: #E5E5E5;
       border-radius: 50%;
-      background-image: url(/img/icons/sort-bg.svg);
+      background-image: url(../img/icons/sort-bg.svg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: 20px 20px; }
@@ -5914,9 +5922,9 @@ body.hidescroll {
     font-size: 11px; } }
 
 .production-banner {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.87)), color-stop(98.71%, rgba(255, 255, 255, 0.5133))), url(/img/materials-header.png);
-  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.87) 0%, rgba(255, 255, 255, 0.5133) 98.71%), url(/img/materials-header.png);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.87) 0%, rgba(255, 255, 255, 0.5133) 98.71%), url(/img/materials-header.png);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.87)), color-stop(98.71%, rgba(255, 255, 255, 0.5133))), url(../img/materials-header.png);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.87) 0%, rgba(255, 255, 255, 0.5133) 98.71%), url(../img/materials-header.png);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.87) 0%, rgba(255, 255, 255, 0.5133) 98.71%), url(../img/materials-header.png);
   background-position: left 300px center;
   background-repeat: no-repeat;
   background-size: cover; }
@@ -6438,9 +6446,9 @@ body.hidescroll {
       max-width: 318px; } }
 
 .production-process {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(/img/process-bg.jpg);
-  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/process-bg.jpg);
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/process-bg.jpg);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(../img/process-bg.jpg);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/process-bg.jpg);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/process-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 278px;
@@ -7075,9 +7083,9 @@ body.hidescroll {
       padding-left: 10px; } }
 
 .workflow-banner {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.9)), color-stop(90.94%, rgba(255, 255, 255, 0.27))), url(/img/workflow-banner.png);
-  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.27) 90.94%), url(/img/workflow-banner.png);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.27) 90.94%), url(/img/workflow-banner.png);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.9)), color-stop(90.94%, rgba(255, 255, 255, 0.27))), url(../img/workflow-banner.png);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.27) 90.94%), url(../img/workflow-banner.png);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.27) 90.94%), url(../img/workflow-banner.png);
   background-position: left 300px center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7242,9 +7250,9 @@ body.hidescroll {
     grid-template-columns: 59px auto; } }
 
 .workflow-step3 {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.45)), to(rgba(0, 0, 0, 0.45))), url(/img/step3-bg.png);
-  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/img/step3-bg.png);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(/img/step3-bg.png);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.45)), to(rgba(0, 0, 0, 0.45))), url(../img/step3-bg.png);
+  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../img/step3-bg.png);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../img/step3-bg.png);
   padding-top: 218px;
   padding-bottom: 150px;
   background-size: cover;
