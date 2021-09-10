@@ -362,29 +362,29 @@ const videoPlayer = () => {
 const dotShow = () => {
 	const dotsContainer = document.querySelector('.closets-advantages__container')
 	if (dotsContainer) {
-		dotsContainer.addEventListener('click', checkClick)
+		dotsContainer.addEventListener('click', checkClick);
 	}
 	function checkClick(event) {
 		const target = event.target;
 		if (!target.closest('.advantages-dot__content._active') && !target.closest('.advantages-dot')) {
-			hideContent(target)
+			hideContent(target);
 		}
 		if (target.classList.contains('advantages-dot')) {
-			hideContent(this)
-			showContent(target)
+			hideContent(this);
+			showContent(target);
 		}
 		if (target.classList.contains('advantages-dot__close')) {
-			hideContent(target)
+			hideContent(target);
 		}
 	}
 	const showContent = (element) => {
-		const content = element.querySelector('.advantages-dot__content')
+		const content = element.querySelector('.advantages-dot__content');
 		content.classList.add('_active');
 	}
 	const hideContent = (element) => {
 		const content = !element.closest('.advantages-dot__content') ? 
-		element.querySelector('.advantages-dot__content._active') : 
-		element.closest('.advantages-dot__content._active');
+						element.querySelector('.advantages-dot__content._active') : 
+						element.closest('.advantages-dot__content._active');
 		
 		if (content) {
 			content.classList.remove('_active');
