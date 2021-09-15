@@ -5,7 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
+    <title>Happy Kitchen</title>
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="./css/libs.min.css">
     <link rel="stylesheet" href="./css/main.css">
 
@@ -165,7 +175,7 @@
                     </li>
                     <li class="header__nav-item header__nav-item_with-child">
                         <div class="header__nav-link-container">
-                            <a href="#" class="header__nav-link">Техника</a>
+                            <a href="./technique-catalog.html" class="header__nav-link">Техника</a>
                             <div class="header__dropdown-open-mobile">
                                 <span class="header__dropdown-open-mobile-line"></span>
                                 <span class="header__dropdown-open-mobile-line"></span>
@@ -382,17 +392,17 @@
         <ul class="kitchen-small__slider swiper-wrapper">
             <li class="kitchen-small__slider-item swiper-slide">
                 <a href="./kitchen-detail.html" class="kitchen-small__slider-link">
-                    <img src="./img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                    <img src="https://happykitchen.ru/assets/components/phpthumbof/cache/a6add8299c1533a0ae3c38da75f0c8cc.1e717a2e9f0d91e06603a68b06337179.jpg" alt="" class="kitchen-small__slider-img">
                 </a>
             </li>
             <li class="kitchen-small__slider-item swiper-slide">
                 <a href="" class="kitchen-small__slider-link">
-                    <img src="./img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                    <img src="https://happykitchen.ru/assets/components/phpthumbof/cache/e5eb046262cdee905d71f9276fa50da7.1e717a2e9f0d91e06603a68b06337179.jpg" alt="" class="kitchen-small__slider-img">
                 </a>
             </li>
             <li class="kitchen-small__slider-item swiper-slide">
                 <a href="" class="kitchen-small__slider-link">
-                    <img src="./img/kitchens/kit (1).jpg" alt="" class="kitchen-small__slider-img">
+                    <img src="https://happykitchen.ru/assets/components/phpthumbof/cache/1c9eef9fae305cd75626faceff427989.1e717a2e9f0d91e06603a68b06337179.jpg" alt="" class="kitchen-small__slider-img">
                 </a>
             </li>
         </ul>
@@ -426,17 +436,17 @@
         <ul class="kitchen-small__slider swiper-wrapper">
             <li class="kitchen-small__slider-item swiper-slide">
                 <a href="./kitchen-detail.html" class="kitchen-small__slider-link">
-                    <img src="./img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                    <img src="https://happykitchen.ru/assets/components/phpthumbof/cache/f9049f9a973a34f0a3c45a0ea099d1f7.1e717a2e9f0d91e06603a68b06337179.jpg" alt="" class="kitchen-small__slider-img">
                 </a>
             </li>
             <li class="kitchen-small__slider-item swiper-slide">
                 <a href="" class="kitchen-small__slider-link">
-                    <img src="./img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                    <img src="https://happykitchen.ru/assets/components/phpthumbof/cache/fc8f945fac2c8d052f1eda39903ae4a2.1e717a2e9f0d91e06603a68b06337179.jpg" alt="" class="kitchen-small__slider-img">
                 </a>
             </li>
             <li class="kitchen-small__slider-item swiper-slide">
                 <a href="" class="kitchen-small__slider-link">
-                    <img src="./img/kitchens/kit (2).jpg" alt="" class="kitchen-small__slider-img">
+                    <img src="https://happykitchen.ru/assets/components/phpthumbof/cache/28136581f1fb8d3ac8d431b191da6324.1e717a2e9f0d91e06603a68b06337179.jpg" alt="" class="kitchen-small__slider-img">
                 </a>
             </li>
         </ul>
@@ -559,8 +569,10 @@
             </div>
             <div class="footer__buttons">
                 <p class="footer__buttons-text">Вызов дизайнера и дизайн-проект бесплатно!</p>
-                <button class="footer__btn-designer btn btn_yellow" type="button">Консультация дизайнера</button>
-                <button class="footer__btn-callback btn btn_white" type="button">Обратный звонок</button>
+                <button class="footer__btn-designer btn btn_yellow popup-open" type="button"
+                    data-target="consult">Консультация дизайнера</button>
+                <button class="footer__btn-callback btn btn_white popup-open" type="button"
+                    data-target="callback">Обратный звонок</button>
             </div>
         </div>
     </div>
